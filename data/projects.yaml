@@ -1,0 +1,224 @@
+# Open-source research projects. Repository URLs were checked on 2026-11-22. Listed alphabetically.
+- id: agentless
+  name: Agentless
+  description: Localization, repair and patch-validation pipeline for issue resolution without an autonomous
+    agent loop.
+  topics:
+  - ai-agents
+  - ai-software-maintenance
+  repository: https://github.com/OpenAutoCoder/Agentless
+  related_papers:
+  - agentless
+  sources:
+  - https://github.com/OpenAutoCoder/Agentless
+  last_verified: '2026-11-22'
+- id: auto-code-rover
+  name: AutoCodeRover
+  description: Program-improvement agent that combines code search with LLM-based patching.
+  topics:
+  - ai-agents
+  - ai-software-maintenance
+  repository: https://github.com/AutoCodeRoverSG/auto-code-rover
+  related_papers:
+  - autocoderover
+  sources:
+  - https://github.com/AutoCodeRoverSG/auto-code-rover
+  last_verified: '2026-11-22'
+- id: bigcodebench
+  name: BigCodeBench
+  description: Benchmark of code generation with diverse library function calls.
+  topics:
+  - ai-empirical-se
+  - ai-code-generation
+  repository: https://github.com/bigcode-project/bigcodebench
+  related_papers:
+  - bigcodebench
+  sources:
+  - https://github.com/bigcode-project/bigcodebench
+  last_verified: '2026-11-22'
+- id: chatdev
+  name: ChatDev
+  description: Communicative agents that collaborate on software development.
+  topics:
+  - ai-agents
+  repository: https://github.com/OpenBMB/ChatDev
+  related_papers:
+  - chatdev
+  sources:
+  - https://github.com/OpenBMB/ChatDev
+  last_verified: '2026-11-22'
+- id: codet5
+  name: CodeT5
+  description: Encoder-decoder code language models and training code.
+  topics:
+  - ai-code-generation
+  - ai-program-analysis
+  repository: https://github.com/salesforce/CodeT5
+  related_papers:
+  - codet5
+  sources:
+  - https://github.com/salesforce/CodeT5
+  last_verified: '2026-11-22'
+- id: codexglue
+  name: CodeXGLUE
+  description: Benchmark collection for code understanding and generation.
+  topics:
+  - ai-empirical-se
+  - ai-program-analysis
+  repository: https://github.com/microsoft/CodeXGLUE
+  related_papers:
+  - codexglue
+  sources:
+  - https://github.com/microsoft/CodeXGLUE
+  last_verified: '2026-11-22'
+- id: coverup
+  name: CoverUp
+  description: Coverage-guided test generation for Python with LLMs.
+  topics:
+  - ai-software-testing
+  repository: https://github.com/plasma-umass/coverup
+  related_papers:
+  - coverup
+  sources:
+  - https://github.com/plasma-umass/coverup
+  last_verified: '2026-11-22'
+- id: evalplus
+  name: EvalPlus
+  description: Rigorous evaluation of LLM-generated code with extended test inputs.
+  topics:
+  - ai-empirical-se
+  - ai-software-testing
+  repository: https://github.com/evalplus/evalplus
+  related_papers:
+  - evalplus
+  sources:
+  - https://github.com/evalplus/evalplus
+  last_verified: '2026-11-22'
+- id: fuzz4all
+  name: Fuzz4All
+  description: Universal fuzzing with large language models across input languages.
+  topics:
+  - ai-software-testing
+  - ai-software-security
+  repository: https://github.com/fuzz4all/fuzz4all
+  related_papers:
+  - fuzz4all
+  sources:
+  - https://github.com/fuzz4all/fuzz4all
+  last_verified: '2026-11-22'
+- id: human-eval
+  name: HumanEval
+  description: Evaluation harness for the HumanEval code-generation problem set.
+  topics:
+  - ai-code-generation
+  - ai-empirical-se
+  repository: https://github.com/openai/human-eval
+  related_papers:
+  - codex-humaneval
+  sources:
+  - https://github.com/openai/human-eval
+  last_verified: '2026-11-22'
+- id: livecodebench
+  name: LiveCodeBench
+  description: Contamination-aware benchmark for code generation and related tasks.
+  topics:
+  - ai-empirical-se
+  - ai-code-generation
+  repository: https://github.com/LiveCodeBench/LiveCodeBench
+  related_papers:
+  - livecodebench
+  sources:
+  - https://github.com/LiveCodeBench/LiveCodeBench
+  last_verified: '2026-11-22'
+- id: metagpt
+  name: MetaGPT
+  description: Multi-agent framework that assigns software-team roles to LLM agents.
+  topics:
+  - ai-agents
+  repository: https://github.com/FoundationAgents/MetaGPT
+  related_papers:
+  - metagpt
+  sources:
+  - https://github.com/FoundationAgents/MetaGPT
+  last_verified: '2026-11-22'
+- id: openhands
+  name: OpenHands
+  description: Open platform for AI software-development agents.
+  topics:
+  - ai-agents
+  repository: https://github.com/OpenHands/OpenHands
+  related_papers:
+  - openhands
+  - codeact
+  sources:
+  - https://github.com/OpenHands/OpenHands
+  last_verified: '2026-11-22'
+- id: repairagent
+  name: RepairAgent
+  description: Autonomous LLM-based agent for program repair.
+  topics:
+  - ai-software-maintenance
+  - ai-agents
+  repository: https://github.com/sola-st/RepairAgent
+  related_papers:
+  - repairagent
+  sources:
+  - https://github.com/sola-st/RepairAgent
+  last_verified: '2026-11-22'
+- id: starcoder2
+  name: StarCoder2
+  description: Open code language models trained on The Stack v2.
+  topics:
+  - ai-code-generation
+  repository: https://github.com/bigcode-project/starcoder2
+  related_papers:
+  - starcoder2
+  sources:
+  - https://github.com/bigcode-project/starcoder2
+  last_verified: '2026-11-22'
+- id: swe-agent
+  name: SWE-agent
+  description: Agent that uses an agent-computer interface to fix issues in software repositories.
+  topics:
+  - ai-agents
+  repository: https://github.com/SWE-agent/SWE-agent
+  related_papers:
+  - swe-agent
+  sources:
+  - https://github.com/SWE-agent/SWE-agent
+  last_verified: '2026-11-22'
+- id: swe-bench
+  name: SWE-bench
+  description: Benchmark and evaluation harness for resolving real GitHub issues.
+  topics:
+  - ai-agents
+  - ai-empirical-se
+  repository: https://github.com/SWE-bench/SWE-bench
+  related_papers:
+  - swe-bench
+  - swe-bench-multimodal
+  sources:
+  - https://github.com/SWE-bench/SWE-bench
+  last_verified: '2026-11-22'
+- id: swe-gym
+  name: SWE-Gym
+  description: Environment for training software-engineering agents and verifiers.
+  topics:
+  - ai-agents
+  repository: https://github.com/SWE-Gym/SWE-Gym
+  related_papers:
+  - swe-gym
+  sources:
+  - https://github.com/SWE-Gym/SWE-Gym
+  last_verified: '2026-11-22'
+- id: swe-smith
+  name: SWE-smith
+  description: Toolkit for generating training data for software-engineering agents.
+  topics:
+  - ai-agents
+  repository: https://github.com/SWE-bench/SWE-smith
+  related_papers:
+  - swe-smith
+  sources:
+  - https://github.com/SWE-bench/SWE-smith
+  last_verified: '2026-11-22'

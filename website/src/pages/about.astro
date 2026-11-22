@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { url } from '../utils/data';
+const h2 = 'mt-10 mb-2 text-xl font-semibold text-slate-900 dark:text-white';
+---
+<Base title="About" description="Mission, scope, inclusion criteria and policies of AI4SE Atlas.">
+  <PageHeader eyebrow="About" title="About AI4SE Atlas" />
+  <div class="max-w-3xl leading-relaxed text-slate-700 dark:text-slate-300">
+    <h2 class={h2}>Mission</h2>
+    <p>AI4SE Atlas is an open, curated and internationally accessible directory of researchers, research topics, publications and open-source projects in AI for Software Engineering. It connects academic and industry research so that people can find their way into the field, and so that tools can reuse the same data.</p>
+    <h2 class={h2}>Scope</h2>
+    <p>Work where AI, including machine learning and large language models, is applied to or studied in software engineering: writing, testing, analyzing, securing, maintaining, deploying and designing software, and agents that do these tasks. Researchers in academia, industry and independent research are all in scope.</p>
+    <h2 class={h2}>Inclusion criteria</h2>
+    <ol class="list-decimal space-y-1 pl-6">
+      <li>The record has a clear connection to AI4SE.</li>
+      <li>Every fact comes from a public source that is cited in the record and can be checked.</li>
+      <li>The record contains no advertising or promotional claims.</li>
+      <li>Only professional, public information is stored: no private email addresses, phone numbers or other personal data.</li>
+      <li>The maintainer may decline records that do not meet these criteria.</li>
+    </ol>
+    <h2 class={h2}>No rankings</h2>
+    <p>The atlas does not rank researchers, institutions, papers or projects. It does not show citation counts, h-index or popularity. Researchers are listed alphabetically by family name, projects by name, and papers by date. All topic nodes in the map have the same size. Inclusion does not imply endorsement, and the atlas is not affiliated with any listed institution.</p>
+    <h2 id="corrections" class={h2}>Corrections and removal</h2>
+    <p>Anyone can report an error. Researchers can ask for their own record to be corrected or removed, and removal requests from the person concerned are honored. Use the <em>Report a correction</em> issue template on GitHub. Corrections are handled in the next weekly update.</p>
+    <h2 class={h2}>Maintenance</h2>
+    <p>AI4SE Atlas is independently maintained and updated every Saturday. Community contributions are welcome and reviewed as part of the weekly maintenance cycle. Updates are provided on a best-effort basis, and no guarantee of real-time synchronization is made.</p>
+    <h2 class={h2}>Data and reuse</h2>
+    <p>The source data are YAML files in the repository, validated against JSON Schemas. The site publishes the same data as <a class="text-indigo-600 underline dark:text-indigo-400" href={url('data/atlas.json')}>JSON</a> and <a class="text-indigo-600 underline dark:text-indigo-400" href={url('data/papers.bib')}>BibTeX</a>, and pages carry schema.org metadata. To cite the atlas, use the repository's <em>Cite this repository</em> button (CITATION.cff).</p>
+    <h2 class={h2}>Acknowledgments</h2>
+    <p>Bibliographic metadata comes from public records such as arXiv. Thanks to everyone who suggests corrections and additions.</p>
+  </div>
+</Base>

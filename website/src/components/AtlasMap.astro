@@ -1,0 +1,57 @@
+---
+// Animated topic map: nodes are the taxonomy, curves are related_topics, dots travel along the curves.
+// All nodes have the same size on purpose (no ranking). Motion stops under prefers-reduced-motion.
+import { topics, url } from '../utils/data';
+import { layout, W, H, CX, CY } from '../utils/map';
+interface Props { highlight?: string; counts?: Record<string, number>; compact?: boolean }
+const { highlight, counts = {}, compact = false } = Astro.props;
+const { nodes, edges, spokes } = layout(topics);
+const near = new Set(highlight ? [highlight, ...(topics.find((t) => t.id === highlight)?.related_topics ?? [])] : []);
+---
+<figure class:list={['relative', compact ? '' : 'fade-in-2']}>
+  <svg viewBox={`0 0 ${W} ${H}`} role="group" aria-labelledby="map-title map-desc" class="h-auto w-full select-none">
+    <title id="map-title">AI4SE topic map</title>
+    <desc id="map-desc">The {topics.length} research topics of the atlas arranged in a ring. Curved lines connect related topics. Select a topic to open its page.</desc>
+    <defs>
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#6366f1" stop-opacity=".28" />
+        <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+      </radialGradient>
+      <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="#6366f1" /><stop offset="1" stop-color="#06b6d4" /></linearGradient>
+    </defs>
+    <ellipse cx={CX} cy={CY} rx="360" ry="250" fill="url(#glow)" />
+    <ellipse cx={CX} cy={CY} rx="300" ry="205" fill="none" stroke="currentColor" stroke-opacity=".08" stroke-width="1" />
+    <g stroke="currentColor" stroke-opacity=".07" stroke-width="1">
+      {spokes.map((s) => <path d={s.d} />)}
+    </g>
+    <g fill="none" stroke="url(#edge)" stroke-width="1.6">
+      {edges.map((e) => (
+        <path d={e.d} class="map-edge" stroke-opacity={highlight && !(near.has(e.a) && near.has(e.b)) ? 0.12 : 0.7} data-a={e.a} data-b={e.b} />
+      ))}
+    </g>
+    <g>
+      {edges.map((e, i) => (
+        <circle r="3.2" class="map-dot" fill={i % 2 ? '#22d3ee' : '#a5b4fc'}
+          style={`offset-path: path('${e.d}'); --dur: ${4 + (i % 5) * 0.9}s; --delay: -${(i * 0.7).toFixed(1)}s;`}
+          opacity={highlight && !(near.has(e.a) && near.has(e.b)) ? 0.15 : 0.95} />
+      ))}
+    </g>
+    <g>
+      <circle cx={CX} cy={CY} r="46" fill="#4f46e5" fill-opacity=".1" stroke="#6366f1" stroke-opacity=".5" />
+      <text x={CX} y={CY - 2} text-anchor="middle" class="fill-slate-900 dark:fill-white" font-size="20" font-weight="700">AI4SE</text>
+      <text x={CX} y={CY + 18} text-anchor="middle" class="fill-slate-500 dark:fill-slate-400" font-size="11" letter-spacing="2">ATLAS</text>
+    </g>
+    {nodes.map((p, i) => {
+      const dim = highlight && !near.has(p.id);
+      const n = counts[p.id];
+      return (
+        <a href={url(`topics/${p.id}/`)} class="map-node" opacity={dim ? 0.35 : 1} aria-label={p.full}>
+          <title>{p.full}{n !== undefined ? ` · ${n} linked records` : ''}</title>
+          <circle cx={p.x} cy={p.y} r="9" fill={`hsl(${p.hue} 85% 60%)`} class="map-ring" style={`animation-delay:-${(i * 0.32).toFixed(2)}s`} />
+          <circle cx={p.x} cy={p.y} r={p.id === highlight ? 12 : 9} class="core" fill={`hsl(${p.hue} 80% 55%)`} stroke="white" stroke-width="2.5" />
+          <text x={p.lx} y={p.ly} text-anchor={p.anchor} font-size="16" font-weight={p.id === highlight ? 700 : 600} class="fill-slate-700 dark:fill-slate-200">{p.name}</text>
+        </a>
+      );
+    })}
+  </svg>
+</figure>

@@ -1,0 +1,24 @@
+name: Add an open-source project
+description: Suggest a research-related open-source project.
+title: "[Project] "
+labels: ["new-record", "project"]
+body:
+  - type: input
+    id: name
+    attributes: { label: Project name }
+    validations: { required: true }
+  - type: input
+    id: repo
+    attributes: { label: Repository URL (https://) }
+    validations: { required: true }
+  - type: textarea
+    id: description
+    attributes: { label: Short factual description (max 300 characters) }
+    validations: { required: true }
+  - type: input
+    id: topics
+    attributes: { label: Topic IDs }
+    validations: { required: true }
+  - type: input
+    id: papers
+    attributes: { label: Related paper (optional), description: "Link to the paper that describes the project." }

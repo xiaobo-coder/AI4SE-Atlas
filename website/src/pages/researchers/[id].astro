@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import TopicChip from '../../components/TopicChip.astro';
+import { researchers, papers, CATEGORY_LABEL, url, type Researcher } from '../../utils/data';
+export function getStaticPaths() { return researchers.map((r) => ({ params: { id: r.id }, props: { r } })); }
+const { r } = Astro.props as { r: Researcher };
+const LINK_LABEL: Record<string, string> = { homepage: 'Homepage', google_scholar: 'Google Scholar', dblp: 'DBLP', orcid: 'ORCID', github: 'GitHub' };
+const links = Object.entries(r.links ?? {}).filter(([, v]) => v);
+const names = new Set([r.name, ...(r.aliases ?? [])].map((n) => n.toLowerCase()));
+const theirPapers = papers.filter((p) => p.authors.some((a) => names.has(a.toLowerCase())));
+const jsonld = { '@context': 'https://schema.org', '@type': 'Person', name: r.name, affiliation: { '@type': 'Organization', name: r.institution }, sameAs: links.map(([, v]) => v), knowsAbout: r.topics };
+---
+<Base title={r.name} description={`${r.name}, ${r.institution}. AI4SE topics: ${r.topics.join(', ')}.`} jsonld={jsonld}>
+  <nav class="mb-6 text-sm"><a class="text-indigo-600 hover:underline dark:text-indigo-400" href={url('researchers/')}>← All researchers</a></nav>
+  <article class="fade-in max-w-3xl">
+    <h1 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">{r.name}</h1>
+    <p class="mt-1 text-lg text-slate-600 dark:text-slate-400">{r.institution} · {CATEGORY_LABEL[r.category]}</p>
+    <div class="mt-4 flex flex-wrap gap-1.5">{r.topics.map((t) => <TopicChip id={t} />)}</div>
+    {links.length > 0 && <div class="mt-6 flex flex-wrap gap-2">{links.map(([k, v]) => <a href={v} rel="noopener" class="rounded-lg border border-slate-300 px-3 py-1.5 text-sm hover:border-indigo-400 dark:border-slate-700">{LINK_LABEL[k] ?? k} ↗</a>)}</div>}
+    {theirPapers.length > 0 && (
+      <section class="mt-10"><h2 class="mb-1 font-semibold">Papers in this atlas</h2><p class="mb-3 text-xs text-slate-600 dark:text-slate-400">Matched by author name; please report a wrong match.</p>
+        <ul class="space-y-2">{theirPapers.map((p) => <li><a class="font-medium hover:underline" href={p.links.paper}>{p.title}</a> <span class="text-sm text-slate-500">({p.year})</span></li>)}</ul>
+      </section>)}
+    <section class="mt-10 rounded-xl bg-slate-50 p-4 text-sm text-slate-600 dark:bg-slate-900 dark:text-slate-400">
+      <p><strong>Sources:</strong> {r.sources.map((s, i) => <>{i > 0 && ', '}<a class="break-all underline" href={s} rel="noopener">{s}</a></>)}</p>
+      <p class="mt-1">Last verified {r.last_verified}. Is something wrong? <a class="underline" href={url('about/#corrections')}>Request a correction or removal</a>.</p>
+    </section>
+  </article>
+</Base>

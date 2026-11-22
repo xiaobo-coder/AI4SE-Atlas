@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import AtlasMap from '../components/AtlasMap.astro';
+import SearchIndex from '../components/SearchIndex.astro';
+import { researchers, papers, projects, topics, url } from '../utils/data';
+
+const counts: Record<string, number> = {};
+for (const t of topics) counts[t.id] = [...researchers, ...papers, ...projects].filter((x) => x.topics.includes(t.id)).length;
+const sections = [
+  { href: 'researchers/', title: 'Researchers', n: researchers.length, text: 'Browse A–Z across academia and industry.', color: 'from-indigo-500 to-violet-500' },
+  { href: 'topics/', title: 'Topics', n: topics.length, text: 'Explore the research taxonomy.', color: 'from-cyan-500 to-sky-500' },
+  { href: 'papers/', title: 'Papers', n: papers.length, text: 'Selected publications, chronological.', color: 'from-fuchsia-500 to-pink-500' },
+  { href: 'projects/', title: 'Projects', n: projects.length, text: 'Open-source research tools and benchmarks.', color: 'from-emerald-500 to-teal-500' },
+];
+const site = Astro.site ? new URL(import.meta.env.BASE_URL, Astro.site).href : undefined;
+const jsonld = {
+  '@context': 'https://schema.org', '@type': 'Dataset', name: 'AI4SE Atlas',
+  description: 'An open, curated, unranked directory of researchers, research topics, papers and open-source projects in AI for Software Engineering.',
+  url: site, isAccessibleForFree: true, keywords: ['AI for Software Engineering', 'AI4SE', 'LLM', 'software engineering research'],
+  distribution: [
+    { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: site ? new URL('data/atlas.json', site).href : undefined },
+    { '@type': 'DataDownload', encodingFormat: 'application/x-bibtex', contentUrl: site ? new URL('data/papers.bib', site).href : undefined },
+  ],
+};
+---
+<Base title="AI4SE Atlas" jsonld={jsonld}>
+  <section class="relative grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] [&>*]:min-w-0">
+    <div class="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-[48rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-400/20 via-cyan-300/20 to-fuchsia-400/20 blur-3xl"></div>
+    <div>
+      <p class="fade-in mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs text-slate-600 dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-400">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Open · Curated · No rankings
+      </p>
+      <h1 class="fade-in text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl dark:text-white">
+        Explore <span class="bg-gradient-to-r from-indigo-600 via-violet-500 to-cyan-500 bg-clip-text text-transparent">AI for Software Engineering</span>
+      </h1>
+      <p class="fade-in-2 mt-4 max-w-xl text-lg text-slate-600 dark:text-slate-400">
+        Discover researchers, topics, papers and open-source projects. Every researcher, paper and project cites a public source, and all of it can be reused as structured data.
+      </p>
+      <div class="fade-in-3 relative mt-6 max-w-xl">
+        <label for="q" class="sr-only">Search the atlas</label>
+        <input id="q" type="search" autocomplete="off" aria-controls="q-results" placeholder="Search researchers, topics, papers, projects…"
+          class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base shadow-sm outline-none transition focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/15 dark:border-slate-700 dark:bg-slate-900" />
+        <p id="q-status" class="sr-only" aria-live="polite"></p>
+        <ul id="q-results" aria-label="Search results" class="absolute z-20 mt-2 hidden max-h-96 w-full overflow-auto rounded-xl border border-slate-200 bg-white p-1 shadow-xl dark:border-slate-700 dark:bg-slate-900"></ul>
+      </div>
+      <div class="fade-in-3 mt-6 flex flex-wrap gap-3 text-sm">
+        <a href={url('contribute/')} class="rounded-lg bg-slate-900 px-4 py-2 font-medium text-white hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200">Contribute a record</a>
+        <a href={url('data/atlas.json')} class="rounded-lg border border-slate-300 px-4 py-2 font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-900">Download the data (JSON)</a>
+      </div>
+    </div>
+    <div class="text-slate-700 dark:text-slate-300"><AtlasMap counts={counts} /></div>
+  </section>
+
+  <section class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {sections.map((s, i) => (
+      <a href={url(s.href)} class="card group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900" style={`animation-delay:${i * 60}ms`}>
+        <div class={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${s.color}`}></div>
+        <div class="text-3xl font-semibold tabular-nums text-slate-900 dark:text-white">{s.n}</div>
+        <div class="mt-1 font-medium">{s.title} <span class="inline-block transition-transform group-hover:translate-x-1">→</span></div>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{s.text}</p>
+      </a>
+    ))}
+  </section>
+
+  <section class="mt-14 grid gap-6 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:grid-cols-3 dark:border-slate-800 dark:bg-slate-900/50">
+    <div><h2 class="font-semibold text-slate-900 dark:text-white">For people</h2><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Find who works on what, follow a topic from its key papers to the tools that implement them.</p></div>
+    <div><h2 class="font-semibold text-slate-900 dark:text-white">For machines</h2><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">YAML in the repository, JSON and BibTeX on the site, schema.org metadata, JSON Schema contracts.</p></div>
+    <div><h2 class="font-semibold text-slate-900 dark:text-white">Fair by design</h2><p class="mt-1 text-sm text-slate-600 dark:text-slate-400">No rankings, no citation counts. Researchers A–Z, papers by date. Anyone can request a correction or removal.</p></div>
+  </section>
+  <SearchIndex />
+  <script>
+    const idx: { k: string; t: string; s: string; u: string }[] = JSON.parse(document.getElementById('search-index')!.textContent || '[]');
+    const q = document.getElementById('q') as HTMLInputElement;
+    const box = document.getElementById('q-results')!;
+    const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+    function render() {
+      const term = q.value.trim().toLowerCase();
+      if (!term) { box.classList.add('hidden'); box.innerHTML = ''; return; }
+      const words = term.split(/\s+/);
+      const hits = idx.filter((x) => words.every((w) => (x.t + ' ' + x.s + ' ' + x.k).toLowerCase().includes(w))).slice(0, 12);
+      box.innerHTML = hits.length
+        ? hits.map((h) => `<li class="result-enter"><a class="block rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800" href="${esc(h.u)}"><span class="mr-2 rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-500 dark:bg-slate-800">${esc(h.k)}</span><span class="font-medium">${esc(h.t)}</span><span class="mt-0.5 block truncate text-xs text-slate-600 dark:text-slate-400">${esc(h.s)}</span></a></li>`).join('')
+        : `<li class="px-3 py-3 text-sm text-slate-500">No match for “${esc(q.value)}”.</li>`;
+      box.classList.remove('hidden');
+      document.getElementById('q-status')!.textContent = `${hits.length} result${hits.length === 1 ? '' : 's'}`;
+    }
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => { if (e.key === 'Escape') { q.value = ''; render(); } });
+    document.addEventListener('click', (e) => { if (!box.contains(e.target as Node) && e.target !== q) box.classList.add('hidden'); });
+  </script>
+</Base>

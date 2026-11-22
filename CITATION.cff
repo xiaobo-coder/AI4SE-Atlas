@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use AI4SE Atlas, please cite it using the metadata below."
+title: "AI4SE Atlas: An Open Research Directory for AI for Software Engineering"
+type: dataset
+authors:
+  - family-names: "Chen"
+    given-names: "Xiaobo"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add your ORCID if you have one
+repository-code: "https://github.com/xiaobo-coder/AI4SE-Atlas"
+url: "https://xiaobo-coder.github.io/AI4SE-Atlas/"
+abstract: >-
+  An open, curated and unranked directory of researchers, research topics,
+  papers and open-source projects in AI for Software Engineering. Records are
+  YAML files validated against JSON Schemas; every researcher, paper and project record cites a public source.
+keywords:
+  - AI for Software Engineering
+  - AI4SE
+  - large language models
+  - software engineering research
+  - research directory
+license:
+  - MIT
+  - CC-BY-4.0
+version: "0.1.0"
+date-released: "2026-11-22"
+# doi: add the Zenodo concept DOI after the first archived release; do not invent one.

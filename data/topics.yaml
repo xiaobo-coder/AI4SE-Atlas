@@ -1,0 +1,79 @@
+# Research topic taxonomy (v1). IDs are stable; names may be refined through community discussion.
+- id: ai-code-generation
+  name: AI for Code Generation
+  short_name: Code Generation
+  description: Models and methods that write source code from natural-language intent, examples, or surrounding
+    code, including code language models and their evaluation.
+  related_topics:
+  - ai-empirical-se
+  - ai-agents
+- id: ai-software-testing
+  name: AI for Software Testing
+  short_name: Testing
+  description: Using learning-based methods and language models to generate tests, oracles, and fuzzing
+    inputs, and to judge whether software behaves correctly.
+  related_topics:
+  - ai-program-analysis
+  - ai-software-security
+- id: ai-program-analysis
+  name: AI for Program Analysis
+  short_name: Program Analysis
+  description: 'Learning-based representations and reasoning over programs: code understanding, static
+    and dynamic analysis, and program semantics.'
+  related_topics:
+  - ai-software-testing
+  - ai-software-maintenance
+- id: ai-software-security
+  name: AI for Software Security
+  short_name: Security
+  description: Finding and fixing vulnerabilities with AI, and the security of code produced or handled
+    by AI systems.
+  related_topics:
+  - ai-software-testing
+  - ai-program-analysis
+- id: ai-software-maintenance
+  name: AI for Software Maintenance
+  short_name: Maintenance & Repair
+  description: Program repair, refactoring, migration, and other changes to existing code made or assisted
+    by AI.
+  related_topics:
+  - ai-agents
+  - ai-program-analysis
+- id: ai-devops
+  name: AI for DevOps and CI/CD
+  short_name: DevOps & CI/CD
+  description: AI in build, integration, deployment, and operations pipelines, including automated checks
+    and release gates.
+  related_topics:
+  - ai-software-maintenance
+  - ai-empirical-se
+- id: ai-requirements
+  name: AI for Requirements Engineering
+  short_name: Requirements
+  description: Eliciting, specifying, tracing, and checking software requirements with the help of AI.
+  related_topics:
+  - ai-software-architecture
+  - ai-agents
+- id: ai-software-architecture
+  name: AI for Software Architecture
+  short_name: Architecture
+  description: AI support for design decisions, architecture recovery, and system-level structure.
+  related_topics:
+  - ai-requirements
+  - ai-software-maintenance
+- id: ai-agents
+  name: AI Agents for Software Engineering
+  short_name: SE Agents
+  description: Autonomous or semi-autonomous agents that plan, edit, run, and test code across repositories
+    and tools.
+  related_topics:
+  - ai-code-generation
+  - ai-software-maintenance
+- id: ai-empirical-se
+  name: Empirical Studies of AI in Software Engineering
+  short_name: Empirical Studies
+  description: Benchmarks, surveys, user studies, and measurements of how AI tools perform and are used
+    in software engineering.
+  related_topics:
+  - ai-code-generation
+  - ai-software-testing

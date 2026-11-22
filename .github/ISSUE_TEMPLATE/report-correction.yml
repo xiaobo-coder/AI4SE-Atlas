@@ -1,0 +1,20 @@
+name: Report a correction or removal
+description: Fix wrong information, or ask for a record to be removed.
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: "If you are the person in a record and want it removed, say so below; removal requests from the person concerned are honored."
+  - type: input
+    id: record
+    attributes: { label: Record, description: "Page URL or the record id." }
+    validations: { required: true }
+  - type: dropdown
+    id: kind
+    attributes: { label: Request, options: [Correct information, Remove my record, Remove a record (other reason), Broken link] }
+    validations: { required: true }
+  - type: textarea
+    id: details
+    attributes: { label: Details and source, description: "What is wrong, and a public source for the correct information." }
+    validations: { required: true }

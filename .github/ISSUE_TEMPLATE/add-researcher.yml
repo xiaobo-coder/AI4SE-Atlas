@@ -1,0 +1,49 @@
+name: Add a researcher
+description: Suggest a researcher in AI for Software Engineering.
+title: "[Researcher] "
+labels: ["new-record", "researcher"]
+body:
+  - type: markdown
+    attributes:
+      value: "Only public, professional information. No private email or phone numbers. The atlas never ranks people."
+  - type: input
+    id: name
+    attributes: { label: Full name, description: As written on the person's own page. }
+    validations: { required: true }
+  - type: input
+    id: institution
+    attributes: { label: Current institution or company }
+    validations: { required: true }
+  - type: dropdown
+    id: category
+    attributes: { label: Sector, options: [academia, industry, independent] }
+    validations: { required: true }
+  - type: checkboxes
+    id: topics
+    attributes:
+      label: Topics (one or more)
+      options:
+        - label: ai-code-generation
+        - label: ai-software-testing
+        - label: ai-program-analysis
+        - label: ai-software-security
+        - label: ai-software-maintenance
+        - label: ai-devops
+        - label: ai-requirements
+        - label: ai-software-architecture
+        - label: ai-agents
+        - label: ai-empirical-se
+  - type: textarea
+    id: links
+    attributes: { label: Public profile links, description: "Homepage, DBLP, ORCID, GitHub (full URLs)." }
+  - type: textarea
+    id: sources
+    attributes: { label: Sources, description: "At least one public page that shows the current affiliation." }
+    validations: { required: true }
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The information is public and professional, and the sources support it.
+          required: true

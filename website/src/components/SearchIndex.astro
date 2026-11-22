@@ -1,0 +1,11 @@
+---
+// Embeds a compact search index for the home-page search box.
+import { researchers, papers, projects, topics, url } from '../utils/data';
+const items = [
+  ...researchers.map((r) => ({ k: 'Researcher', t: r.name, s: r.institution, u: url(`researchers/${r.id}/`) })),
+  ...topics.map((t) => ({ k: 'Topic', t: t.name, s: t.description, u: url(`topics/${t.id}/`) })),
+  ...papers.map((p) => ({ k: 'Paper', t: p.title, s: `${p.year} · ${p.authors.slice(0, 3).join(', ')}${p.authors.length > 3 ? ' et al.' : ''}`, u: p.links.paper })),
+  ...projects.map((p) => ({ k: 'Project', t: p.name, s: p.description, u: p.repository })),
+];
+---
+<script type="application/json" id="search-index" set:html={JSON.stringify(items).replace(/</g, '\\u003c')} />

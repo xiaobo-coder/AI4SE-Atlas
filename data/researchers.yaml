@@ -1,0 +1,368 @@
+# Researchers. Each record cites a public page that shows the affiliation (checked 2026-11-22).
+# The site lists researchers alphabetically by family name; this file order has no meaning.
+- id: lingming-zhang
+  name: Lingming Zhang
+  institution: University of Illinois Urbana-Champaign
+  category: academia
+  topics:
+  - ai-software-testing
+  - ai-software-maintenance
+  - ai-code-generation
+  links:
+    homepage: https://lingming.cs.illinois.edu/
+    dblp: https://dblp.org/pid/27/7057-1
+  sources:
+  - https://lingming.cs.illinois.edu/
+  last_verified: '2026-11-22'
+- id: abhik-roychoudhury
+  name: Abhik Roychoudhury
+  institution: National University of Singapore
+  category: academia
+  topics:
+  - ai-agents
+  - ai-program-analysis
+  - ai-software-security
+  links:
+    homepage: https://abhikrc.com/
+  sources:
+  - https://abhikrc.com/
+  last_verified: '2026-11-22'
+- id: michael-pradel
+  name: Michael Pradel
+  institution: University of Stuttgart; CISPA Helmholtz Center for Information Security
+  category: academia
+  topics:
+  - ai-agents
+  - ai-software-testing
+  - ai-program-analysis
+  links:
+    homepage: https://software-lab.org/people/Michael_Pradel.html
+    dblp: https://dblp.org/pid/25/2188
+    github: https://github.com/michaelpradel
+  sources:
+  - https://software-lab.org/people/Michael_Pradel.html
+  last_verified: '2026-11-22'
+- id: david-lo
+  name: David Lo
+  institution: Singapore Management University
+  category: academia
+  topics:
+  - ai-empirical-se
+  - ai-software-security
+  links:
+    homepage: http://www.mysmu.edu/faculty/davidlo/
+  sources:
+  - http://www.mysmu.edu/faculty/davidlo/
+  last_verified: '2026-11-22'
+- id: julia-rubin
+  name: Julia Rubin
+  institution: University of British Columbia
+  category: academia
+  topics:
+  - ai-requirements
+  - ai-software-security
+  - ai-empirical-se
+  links:
+    homepage: https://people.ece.ubc.ca/mjulia/
+  sources:
+  - https://people.ece.ubc.ca/mjulia/
+  - https://people.ece.ubc.ca/mjulia/publications.html
+  last_verified: '2026-11-22'
+- id: caroline-lemieux
+  name: Caroline Lemieux
+  institution: University of British Columbia
+  category: academia
+  topics:
+  - ai-software-testing
+  - ai-program-analysis
+  links:
+    homepage: https://www.carolemieux.com/
+    github: https://github.com/carolemieux
+  sources:
+  - https://www.carolemieux.com/
+  last_verified: '2026-11-22'
+- id: ivan-beschastnikh
+  name: Ivan Beschastnikh
+  institution: University of British Columbia
+  category: academia
+  topics:
+  - ai-program-analysis
+  links:
+    homepage: https://www.cs.ubc.ca/~bestchai/
+    dblp: https://dblp.org/pid/98/5324
+  sources:
+  - https://www.cs.ubc.ca/~bestchai/
+  last_verified: '2026-11-22'
+- id: graham-neubig
+  name: Graham Neubig
+  institution: Carnegie Mellon University
+  category: academia
+  topics:
+  - ai-agents
+  - ai-code-generation
+  links:
+    homepage: https://www.phontron.com/
+    github: https://github.com/neubig
+  sources:
+  - https://www.phontron.com/
+  - https://www.phontron.com/assets/index-BHco0Kmg.js
+  last_verified: '2026-11-22'
+- id: karthik-r-narasimhan
+  name: Karthik R. Narasimhan
+  aliases:
+  - Karthik Narasimhan
+  institution: Princeton University
+  category: academia
+  topics:
+  - ai-agents
+  - ai-code-generation
+  links:
+    homepage: https://karthiknarasimhan.com/
+    github: https://github.com/karthikncode
+  sources:
+  - https://karthiknarasimhan.com/
+  last_verified: '2026-11-22'
+- id: ofir-press
+  name: Ofir Press
+  institution: FAIR
+  category: industry
+  topics:
+  - ai-code-generation
+  - ai-agents
+  links:
+    homepage: https://ofir.io/about/
+  sources:
+  - https://ofir.io/about/
+  last_verified: '2026-11-22'
+- id: baishakhi-ray
+  name: Baishakhi Ray
+  institution: Columbia University
+  category: academia
+  topics:
+  - ai-code-generation
+  - ai-software-security
+  - ai-program-analysis
+  links:
+    homepage: https://www.rayb.info/
+  sources:
+  - https://www.rayb.info/
+  last_verified: '2026-11-22'
+- id: prem-devanbu
+  name: Prem Devanbu
+  aliases:
+  - Premkumar Devanbu
+  institution: University of California, Davis
+  category: academia
+  topics:
+  - ai-code-generation
+  - ai-empirical-se
+  - ai-agents
+  links:
+    homepage: https://web.cs.ucdavis.edu/~devanbu/
+  sources:
+  - https://web.cs.ucdavis.edu/~devanbu/
+  last_verified: '2026-11-22'
+- id: lin-tan
+  name: Lin Tan
+  institution: Purdue University
+  category: academia
+  topics:
+  - ai-agents
+  - ai-software-maintenance
+  - ai-software-testing
+  links:
+    homepage: https://www.cs.purdue.edu/homes/lintan/
+    github: https://github.com/lin-tan
+  sources:
+  - https://www.cs.purdue.edu/homes/lintan/
+  last_verified: '2026-11-22'
+- id: michael-r-lyu
+  name: Michael R. Lyu
+  institution: The Chinese University of Hong Kong
+  category: academia
+  topics:
+  - ai-devops
+  - ai-software-testing
+  links:
+    homepage: https://www.cse.cuhk.edu.hk/lyu/
+  sources:
+  - https://www.cse.cuhk.edu.hk/lyu/
+  last_verified: '2026-11-22'
+- id: claire-le-goues
+  name: Claire Le Goues
+  sort_name: Le Goues
+  institution: Carnegie Mellon University
+  category: academia
+  topics:
+  - ai-software-maintenance
+  - ai-program-analysis
+  links:
+    homepage: https://clairelegoues.com/
+    github: https://github.com/clegoues
+  sources:
+  - https://clairelegoues.com/
+  - https://www.clairelegoues.com/publications/
+  last_verified: '2026-11-22'
+- id: miltos-allamanis
+  name: Miltos Allamanis
+  institution: Apple
+  category: industry
+  topics:
+  - ai-code-generation
+  - ai-software-maintenance
+  links:
+    homepage: https://miltos.allamanis.com/
+    github: https://github.com/mallamanis
+  sources:
+  - https://miltos.allamanis.com/
+  last_verified: '2026-11-22'
+- id: frank-tip
+  name: Frank Tip
+  institution: Northeastern University
+  category: academia
+  topics:
+  - ai-software-testing
+  links:
+    homepage: https://www.franktip.org/
+  sources:
+  - https://www.franktip.org/
+  last_verified: '2026-11-22'
+- id: sarah-nadi
+  name: Sarah Nadi
+  institution: New York University Abu Dhabi
+  category: academia
+  topics:
+  - ai-program-analysis
+  - ai-empirical-se
+  links:
+    homepage: https://sarahnadi.org/
+    github: https://github.com/snadi
+  sources:
+  - https://sarahnadi.org/
+  last_verified: '2026-11-22'
+- id: daniel-fried
+  name: Daniel Fried
+  institution: Carnegie Mellon University
+  category: academia
+  topics:
+  - ai-agents
+  - ai-code-generation
+  links:
+    homepage: https://dpfried.github.io/
+  sources:
+  - https://dpfried.github.io/
+  last_verified: '2026-11-22'
+- id: emery-berger
+  name: Emery Berger
+  aliases:
+  - Emery D. Berger
+  institution: University of Massachusetts Amherst
+  category: academia
+  topics:
+  - ai-software-maintenance
+  - ai-program-analysis
+  links:
+    homepage: https://github.com/emeryberger
+    github: https://github.com/emeryberger
+  sources:
+  - https://emeryberger.com/
+  - https://github.com/emeryberger
+  last_verified: '2026-11-22'
+- id: kexin-pei
+  name: Kexin Pei
+  institution: The University of Chicago
+  category: academia
+  topics:
+  - ai-program-analysis
+  - ai-software-security
+  links:
+    homepage: https://sites.google.com/site/kexinpeisite/
+  sources:
+  - https://sites.google.com/site/kexinpeisite/
+  last_verified: '2026-11-22'
+- id: yiling-lou
+  name: Yiling Lou
+  institution: University of Illinois Urbana-Champaign
+  category: academia
+  topics:
+  - ai-agents
+  - ai-software-testing
+  - ai-code-generation
+  links:
+    homepage: https://yilinglou.github.io/
+  sources:
+  - https://yilinglou.github.io/
+  last_verified: '2026-11-22'
+- id: foutse-khomh
+  name: Foutse Khomh
+  institution: Polytechnique Montréal
+  category: academia
+  topics:
+  - ai-empirical-se
+  - ai-software-maintenance
+  links:
+    homepage: https://swat.polymtl.ca/~foutsekh/
+  sources:
+  - https://swat.polymtl.ca/~foutsekh/about/index.html
+  last_verified: '2026-11-22'
+- id: shin-hwei-tan
+  name: Shin Hwei Tan
+  institution: Concordia University
+  category: academia
+  topics:
+  - ai-software-maintenance
+  - ai-software-testing
+  links:
+    homepage: https://www.shinhwei.com/
+  sources:
+  - https://www.shinhwei.com/
+  last_verified: '2026-11-22'
+- id: jin-guo
+  name: Jin Guo
+  institution: McGill University
+  category: academia
+  topics:
+  - ai-requirements
+  - ai-empirical-se
+  links:
+    homepage: https://www.cs.mcgill.ca/~jguo/
+  sources:
+  - https://www.cs.mcgill.ca/~jguo/
+  last_verified: '2026-11-22'
+- id: ge-li
+  name: Ge Li
+  institution: Peking University
+  category: academia
+  topics:
+  - ai-code-generation
+  links:
+    homepage: https://ligechina.github.io/
+  sources:
+  - https://ligechina.github.io/
+  last_verified: '2026-11-22'
+- id: xin-xia
+  name: Xin Xia
+  institution: Zhejiang University
+  category: academia
+  topics:
+  - ai-empirical-se
+  - ai-software-security
+  links:
+    homepage: https://xin-xia.github.io/
+  sources:
+  - https://xin-xia.github.io/
+  last_verified: '2026-11-22'
+- id: chunyang-chen
+  name: Chunyang Chen
+  institution: Technical University of Munich
+  category: academia
+  topics:
+  - ai-software-testing
+  - ai-agents
+  - ai-software-maintenance
+  links:
+    homepage: https://chunyang-chen.github.io/
+    dblp: https://dblp.org/pid/180/7246
+  sources:
+  - https://chunyang-chen.github.io/
+  last_verified: '2026-11-22'

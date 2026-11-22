@@ -1,0 +1,2000 @@
+# Selected papers. Titles, authors and dates come from the arXiv record (verified 2026-11-22).
+# Inclusion is not a ranking; papers are listed chronologically on the site.
+# 2026 seed papers: cs.SE primary category, about LLMs/agents, with a public GitHub repository named in the abstract.
+# Add more with: python scripts/add_arxiv.py <arXiv id> --topics <topic ids>
+- id: aacr-bench
+  title: 'AACR-Bench: Evaluating Automatic Code Review with Holistic Repository-Level Context'
+  year: 2026
+  authors:
+  - Lei Zhang
+  - Yongda Yu
+  - Minghui Yu
+  - Xinxin Guo
+  - Zhengqi Zhuang
+  - Guoping Rong
+  - Dong Shao
+  - Haifeng Shen
+  - Hongyu Kuang
+  - Zhengfeng Li
+  - Boge Wang
+  - Guoan Zhang
+  - Bangyu Xiang
+  - Xiaobin Xu
+  topics:
+  - ai-software-maintenance
+  - ai-empirical-se
+  arxiv: '2601.19494'
+  links:
+    paper: https://arxiv.org/abs/2601.19494
+    code: https://github.com/alibaba/aacr-bench
+  sources:
+  - https://arxiv.org/abs/2601.19494
+  last_verified: '2026-11-22'
+- id: abc-bench
+  title: 'ABC-Bench: Benchmarking Agentic Backend Coding in Real-World Development'
+  year: 2026
+  authors:
+  - Jie Yang
+  - Honglin Guo
+  - Li Ji
+  - Jiazheng Zhou
+  - Rui Zheng
+  - Zhikai Lei
+  - Shuo Zhang
+  - Zhiheng Xi
+  - Shichun Liu
+  - Yuxin Wang
+  - Bo Wang
+  - Yining Zheng
+  - Tao Gui
+  - Xipeng Qiu
+  topics:
+  - ai-agents
+  - ai-empirical-se
+  arxiv: '2601.11077'
+  links:
+    paper: https://arxiv.org/abs/2601.11077
+    code: https://github.com/OpenMOSS/ABC-Bench
+  sources:
+  - https://arxiv.org/abs/2601.11077
+  last_verified: '2026-11-22'
+- id: agentlens
+  title: 'AgentLens: Revealing The Lucky Pass Problem in SWE-Agent Evaluation'
+  year: 2026
+  authors:
+  - Priyam Sahoo
+  - Gaurav Mittal
+  - Xiaomin Li
+  - Shengjie Ma
+  - Benjamin Steenhoek
+  - Pingping Lin
+  - Yu Hu
+  topics:
+  - ai-agents
+  - ai-empirical-se
+  arxiv: '2605.12925'
+  links:
+    paper: https://arxiv.org/abs/2605.12925
+    code: https://github.com/agentlens-framework/agentlens
+  sources:
+  - https://arxiv.org/abs/2605.12925
+  last_verified: '2026-11-22'
+- id: ai-ides-or-autonomous-agents
+  title: AI IDEs or Autonomous Agents? Measuring the Impact of Coding Agents on Software Development
+  year: 2026
+  authors:
+  - Shyam Agarwal
+  - Hao He
+  - Bogdan Vasilescu
+  topics:
+  - ai-empirical-se
+  - ai-agents
+  arxiv: '2601.13597'
+  links:
+    paper: https://arxiv.org/abs/2601.13597
+    code: https://github.com/shyamagarwal13/agentic-coding-impact
+  sources:
+  - https://arxiv.org/abs/2601.13597
+  last_verified: '2026-11-22'
+- id: archagent
+  title: 'ArchAgent: Scalable Legacy Software Architecture Recovery with LLMs'
+  year: 2026
+  authors:
+  - Rusheng Pan
+  - Bingcheng Mao
+  - Tianyi Ma
+  - Zhenhua Ling
+  topics:
+  - ai-software-architecture
+  - ai-software-maintenance
+  arxiv: '2601.13007'
+  links:
+    paper: https://arxiv.org/abs/2601.13007
+    code: https://github.com/panrusheng/arch-eval-benchmark
+  sources:
+  - https://arxiv.org/abs/2601.13007
+  last_verified: '2026-11-22'
+- id: clareval
+  title: 'ClarEval: A Benchmark for Evaluating Clarification Skills of Code Agents under Ambiguous Instructions'
+  year: 2026
+  authors:
+  - Jialin Li
+  - Yuan Wu
+  - Yi Chang
+  topics:
+  - ai-requirements
+  - ai-agents
+  arxiv: '2603.00187'
+  links:
+    paper: https://arxiv.org/abs/2603.00187
+    code: https://github.com/JialinLi13/ClarEval
+  sources:
+  - https://arxiv.org/abs/2603.00187
+  last_verified: '2026-11-22'
+- id: cloudir-bench
+  title: 'CloudIR-Bench: A Benchmark for Root Cause Analysis and Mitigation of Cloud Incidents'
+  year: 2026
+  authors:
+  - Hoang Tran
+  - Huong Ha
+  - Tri Dang
+  - Jeffrey Chan
+  - Hongyu Zhang
+  topics:
+  - ai-devops
+  arxiv: '2610.29185'
+  links:
+    paper: https://arxiv.org/abs/2610.29185
+    code: https://github.com/hoangtnm/CloudIR-Bench
+  sources:
+  - https://arxiv.org/abs/2610.29185
+  last_verified: '2026-11-22'
+- id: codespecbench
+  title: 'CodeSpecBench: Benchmarking LLMs for Executable Behavioral Specification Generation'
+  year: 2026
+  authors:
+  - Zaoyu Chen
+  - Jianbo Dai
+  - Boyu Zhu
+  - Jingdong Wang
+  - Huiming Wang
+  - Xin Xu
+  - Haoyang Yuan
+  - Zhijiang Guo
+  - Xiao-Ming Wu
+  topics:
+  - ai-requirements
+  - ai-program-analysis
+  arxiv: '2604.12268'
+  links:
+    paper: https://arxiv.org/abs/2604.12268
+    code: https://github.com/SparksofAGI/CodeSpecBench
+  sources:
+  - https://arxiv.org/abs/2604.12268
+  last_verified: '2026-11-22'
+- id: core
+  title: 'CoRE: A Fine-Grained Code Reasoning Benchmark Beyond Output Prediction'
+  year: 2026
+  authors:
+  - Jun Gao
+  - Yun Peng
+  - Qian Qiao
+  - Changhai Zhou
+  - Yuhua Zhou
+  - Shiyang Zhang
+  - Shichao Weng
+  - Zhenchang Xing
+  - Xiaoxue Ren
+  topics:
+  - ai-program-analysis
+  - ai-empirical-se
+  arxiv: '2604.25399'
+  links:
+    paper: https://arxiv.org/abs/2604.25399
+    code: https://github.com/ZJUSig/CoRE
+  sources:
+  - https://arxiv.org/abs/2604.25399
+  last_verified: '2026-11-22'
+- id: distdebug-bench
+  title: 'DistDebug-Bench: Can LLM Agents Diagnose Bugs in Distributed Systems?'
+  year: 2026
+  authors:
+  - Yuxuan Jiang
+  - Chenglin Liu
+  - John Rose
+  - Mason Miller
+  - Ruthesh Thavamani
+  - Juntao Wu
+  - Yinwei Huang
+  - Jiahao Xu
+  - Peng Huang
+  topics:
+  - ai-agents
+  - ai-software-maintenance
+  arxiv: '2611.03523'
+  links:
+    paper: https://arxiv.org/abs/2611.03523
+    code: https://github.com/OrderLab/distdebug-bench
+  sources:
+  - https://arxiv.org/abs/2611.03523
+  last_verified: '2026-11-22'
+- id: identical-runs-different-results
+  title: 'Identical Runs, Different Results: Benchmarking AI Coding Agents on Open-Weight Models'
+  year: 2026
+  authors:
+  - Eduardo Ariño de la Rubia
+  - Szilard Pafka
+  topics:
+  - ai-empirical-se
+  - ai-agents
+  arxiv: '2609.33812'
+  links:
+    paper: https://arxiv.org/abs/2609.33812
+    code: https://github.com/earino/identical-runs-different-results
+  sources:
+  - https://arxiv.org/abs/2609.33812
+  last_verified: '2026-11-22'
+- id: jeto-bench
+  title: 'JETO-Bench: A Reproducible Benchmark for Execution Time Improvement Patches in Java'
+  year: 2026
+  authors:
+  - Khashayar Etemadi
+  - Zhendong Su
+  topics:
+  - ai-software-maintenance
+  - ai-empirical-se
+  arxiv: '2606.31767'
+  links:
+    paper: https://arxiv.org/abs/2606.31767
+    code: https://github.com/khesoem/JETO-Bench
+  sources:
+  - https://arxiv.org/abs/2606.31767
+  last_verified: '2026-11-22'
+- id: omnicode
+  title: 'OmniCode: A Benchmark for Evaluating Software Engineering Agents'
+  year: 2026
+  authors:
+  - Atharv Sonwane
+  - Eng-Shen Tu
+  - Wei-Chung Lu
+  - Claas Beger
+  - Carter Larsen
+  - Debjit Dhar
+  - Simon Alford
+  - Rachel Chen
+  - Ronit Pattanayak
+  - Tuan Anh Dang
+  - Guohao Chen
+  - Gloria Geng
+  - Kevin Ellis
+  - Saikat Dutta
+  topics:
+  - ai-agents
+  - ai-empirical-se
+  arxiv: '2602.02262'
+  links:
+    paper: https://arxiv.org/abs/2602.02262
+    code: https://github.com/seal-research/OmniCode
+  sources:
+  - https://arxiv.org/abs/2602.02262
+  last_verified: '2026-11-22'
+- id: saasbench
+  title: 'SaaSBench: Exploring the Boundaries of Coding Agents in Long-Horizon Enterprise SaaS Engineering'
+  year: 2026
+  authors:
+  - Qingnan Ren
+  - Shun Zou
+  - Shiting Huang
+  - Ziao Zhang
+  - Kou Shi
+  - Zhen Fang
+  - Yiming Zhao
+  - Yu Zeng
+  - Qisheng Su
+  - Lin Chen
+  - Yong Wang
+  - Zehui Chen
+  - Xiangxiang Chu
+  - Feng Zhao
+  topics:
+  - ai-agents
+  arxiv: '2605.17526'
+  links:
+    paper: https://arxiv.org/abs/2605.17526
+    code: https://github.com/ShadeCloak/SaaSbench
+  sources:
+  - https://arxiv.org/abs/2605.17526
+  last_verified: '2026-11-22'
+- id: saber
+  title: 'SABER: Benchmarking Operational Safety of LLM Coding Agents in Stateful Project Workspaces'
+  year: 2026
+  authors:
+  - Qi Hu
+  - Yifeng Tang
+  - Qinghua Wang
+  - Lanyang Zhao
+  - Pengji Zhang
+  - Yuhao Qing
+  - Xin Yao
+  - Dong Huang
+  - Lin Zhang
+  - Zhuoran Ji
+  topics:
+  - ai-software-security
+  - ai-agents
+  arxiv: '2606.01317'
+  links:
+    paper: https://arxiv.org/abs/2606.01317
+    code: https://github.com/sssr-lab/saber
+  sources:
+  - https://arxiv.org/abs/2606.01317
+  last_verified: '2026-11-22'
+- id: setupx
+  title: 'SetupX: Can LLM Agents Learn from Past Failures in Functionality-Correct Code Repository Setup?'
+  year: 2026
+  authors:
+  - Zihang Zhou
+  - Ziqian Ren
+  - Yukai Wu
+  - Yingjie Xiong
+  - Wei Zhou
+  - Chao Peng
+  - Dong Zhang
+  - Bingheng Yan
+  - Xuanhe Zhou
+  - Fan Wu
+  topics:
+  - ai-devops
+  - ai-agents
+  arxiv: '2605.26186'
+  links:
+    paper: https://arxiv.org/abs/2605.26186
+    code: https://github.com/OpenDataBox/SetupX
+  sources:
+  - https://arxiv.org/abs/2605.26186
+  last_verified: '2026-11-22'
+- id: svrepair
+  title: 'SVRepair: Structured Visual Reasoning for Automated Program Repair'
+  year: 2026
+  authors:
+  - Jincheng Wang
+  - Liwei Luo
+  - Xiaoxuan Tang
+  - Jingxuan Xu
+  - Sheng Zhou
+  - Dajun Chen
+  - Wei Jiang
+  - Yong Li
+  topics:
+  - ai-software-maintenance
+  arxiv: '2602.06090'
+  links:
+    paper: https://arxiv.org/abs/2602.06090
+    code: https://github.com/codefuse-ai/CodeFuse-SVR
+  sources:
+  - https://arxiv.org/abs/2602.06090
+  last_verified: '2026-11-22'
+- id: swe-clar
+  title: 'SWE-Clar: Can Coding Agents Clarify Incomplete Client Requirements and Deliver Greenfield Software?'
+  year: 2026
+  authors:
+  - Jialei Li
+  - Dingxian Wang
+  - Xiaoyan Zhao
+  - Yimeng Bai
+  - Xuanyi Zhu
+  - Yang Zhang
+  - Chao Yin
+  - Wentao Shi
+  - Ganesh Prabhu
+  - Karthik Gomadam Rajagopal
+  - Brett Levert
+  - Darvin Yi
+  - Andrew Rabinovich
+  - Zhao Chen
+  topics:
+  - ai-requirements
+  - ai-agents
+  arxiv: '2610.31854'
+  links:
+    paper: https://arxiv.org/abs/2610.31854
+    code: https://github.com/upwork/SWE-Clar
+  sources:
+  - https://arxiv.org/abs/2610.31854
+  last_verified: '2026-11-22'
+- id: swe-recreation
+  title: 'SWE-Recreation: Benchmarking Coding Agents for Software Recreation'
+  year: 2026
+  authors:
+  - Zhiyao Xu
+  - Zhanjie Ding
+  - Hongyao Yu
+  - Jingyu Xiao
+  topics:
+  - ai-agents
+  arxiv: '2611.26311'
+  links:
+    paper: https://arxiv.org/abs/2611.26311
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2611.26311
+  last_verified: '2026-11-22'
+- id: swe-skills-bench
+  title: 'SWE-Skills-Bench: Do Agent Skills Actually Help in Real-World Software Engineering?'
+  year: 2026
+  authors:
+  - Tingxu Han
+  - Yi Zhang
+  - Wei Song
+  - Chunrong Fang
+  - Zhenyu Chen
+  - Youcheng Sun
+  - Lijie Hu
+  topics:
+  - ai-agents
+  - ai-empirical-se
+  arxiv: '2603.15401'
+  links:
+    paper: https://arxiv.org/abs/2603.15401
+    code: https://github.com/ControllableModel/SWE-Skills-Bench
+  sources:
+  - https://arxiv.org/abs/2603.15401
+  last_verified: '2026-11-22'
+- id: swe-world
+  title: 'SWE-World: Building Software Engineering Agents in Docker-Free Environments'
+  year: 2026
+  authors:
+  - Shuang Sun
+  - Huatong Song
+  - Lisheng Huang
+  - Jinhao Jiang
+  - Ran Le
+  - Zhihao Lv
+  - Zongchao Chen
+  - Yiwen Hu
+  - Wenyang Luo
+  - Wayne Xin Zhao
+  - Yang Song
+  - Hongteng Xu
+  - Tao Zhang
+  - Ji-Rong Wen
+  topics:
+  - ai-agents
+  arxiv: '2602.03419'
+  links:
+    paper: https://arxiv.org/abs/2602.03419
+    code: https://github.com/RUCAIBox/SWE-World
+  sources:
+  - https://arxiv.org/abs/2602.03419
+  last_verified: '2026-11-22'
+- id: synthfix
+  title: 'SynthFix: Adaptive Neuro-Symbolic Code Vulnerability Repair'
+  year: 2026
+  authors:
+  - Yifan Zhang
+  - Jieyu Li
+  - Kexin Pei
+  - Yu Huang
+  - Kevin Leach
+  topics:
+  - ai-software-security
+  - ai-software-maintenance
+  arxiv: '2604.17184'
+  links:
+    paper: https://arxiv.org/abs/2604.17184
+    code: https://github.com/CoderDoge1108/SynthFix
+  sources:
+  - https://arxiv.org/abs/2604.17184
+  last_verified: '2026-11-22'
+- id: tam-eval
+  title: 'TAM-Eval: Evaluating LLMs for Automated Unit Test Maintenance'
+  year: 2026
+  authors:
+  - Elena Bruches
+  - Vadim Alperovich
+  - Dari Baturova
+  - Roman Derunets
+  - Daniil Grebenkin
+  - Georgy Mkrtchyan
+  - Oleg Sedukhin
+  - Mikhail Klementev
+  - Ivan Bondarenko
+  - Nikolay Bushkov
+  - Stanislav Moiseev
+  topics:
+  - ai-software-testing
+  - ai-software-maintenance
+  arxiv: '2601.18241'
+  links:
+    paper: https://arxiv.org/abs/2601.18241
+    code: https://github.com/trndcenter/TAM-Eval
+  sources:
+  - https://arxiv.org/abs/2601.18241
+  last_verified: '2026-11-22'
+- id: taming-the-drift
+  title: 'Taming the Drift: Context-aware Repair of Dockerfile Drift during Software Evolution'
+  year: 2026
+  authors:
+  - Chengjie Wang
+  - Jingzheng Wu
+  - Xiang Ling
+  - Tianyue Luo
+  - Chen Zhao
+  topics:
+  - ai-devops
+  - ai-software-maintenance
+  arxiv: '2607.12541'
+  links:
+    paper: https://arxiv.org/abs/2607.12541
+    code: https://github.com/dw763j/Cadre
+  sources:
+  - https://arxiv.org/abs/2607.12541
+  last_verified: '2026-11-22'
+- id: theory-of-code-space
+  title: 'Theory of Code Space: Do Code Agents Understand Software Architecture?'
+  year: 2026
+  authors:
+  - Grigory Sapunov
+  topics:
+  - ai-software-architecture
+  - ai-agents
+  arxiv: '2603.00601'
+  links:
+    paper: https://arxiv.org/abs/2603.00601
+    code: https://github.com/che-shr-cat/tocs
+  sources:
+  - https://arxiv.org/abs/2603.00601
+  last_verified: '2026-11-22'
+- id: timemachine-bench
+  title: 'TimeMachine-bench: A Benchmark for Evaluating Model Capabilities in Repository-Level Migration
+    Tasks'
+  year: 2026
+  authors:
+  - Ryo Fujii
+  - Makoto Morishita
+  - Kazuki Yano
+  - Jun Suzuki
+  topics:
+  - ai-software-maintenance
+  arxiv: '2601.22597'
+  links:
+    paper: https://arxiv.org/abs/2601.22597
+    code: https://github.com/tohoku-nlp/timemachine-bench
+  sources:
+  - https://arxiv.org/abs/2601.22597
+  last_verified: '2026-11-22'
+- id: verisoftbench
+  title: 'VeriSoftBench: Repository-Scale Formal Verification Benchmarks for Lean'
+  year: 2026
+  authors:
+  - Yutong Xin
+  - Qiaochu Chen
+  - Greg Durrett
+  - Işil Dillig
+  topics:
+  - ai-program-analysis
+  - ai-empirical-se
+  arxiv: '2602.18307'
+  links:
+    paper: https://arxiv.org/abs/2602.18307
+    code: https://github.com/utopia-group/VeriSoftBench
+  sources:
+  - https://arxiv.org/abs/2602.18307
+  last_verified: '2026-11-22'
+- id: vulnagent-r2
+  title: 'VulnAgent-R2: Evidence-Calibrated Multi-Agent Auditing for Repository-Level Vulnerability Detection'
+  year: 2026
+  authors:
+  - Renwei Meng
+  - Haoyi Wu
+  - Jingming Wang
+  topics:
+  - ai-software-security
+  arxiv: '2603.13384'
+  links:
+    paper: https://arxiv.org/abs/2603.13384
+    code: https://github.com/renweimeng/Vlun-Agent-X
+  sources:
+  - https://arxiv.org/abs/2603.13384
+  last_verified: '2026-11-22'
+- id: webtestbench
+  title: 'WebTestBench: Evaluating Computer-Use Agents towards End-to-End Automated Web Testing'
+  year: 2026
+  authors:
+  - Fanheng Kong
+  - Jingyuan Zhang
+  - Yang Yue
+  - Chenxi Sun
+  - Yang Tian
+  - Shi Feng
+  - Xiaocui Yang
+  - Daling Wang
+  - Yu Tian
+  - Jun Du
+  - Wenchong Zeng
+  - Han Li
+  - Kun Gai
+  topics:
+  - ai-software-testing
+  - ai-agents
+  arxiv: '2603.25226'
+  links:
+    paper: https://arxiv.org/abs/2603.25226
+    code: https://github.com/friedrichor/WebTestBench
+  sources:
+  - https://arxiv.org/abs/2603.25226
+  last_verified: '2026-11-22'
+- id: wideswe
+  title: 'WideSWE: Can Coding Agents Coordinate Changes Across Repositories?'
+  year: 2026
+  authors:
+  - Baoyi Wang
+  - Xingliang Wang
+  - Jinyang Wu
+  - Keming Wu
+  - Chen Zhi
+  - Jianwei Yin
+  topics:
+  - ai-agents
+  arxiv: '2609.33382'
+  links:
+    paper: https://arxiv.org/abs/2609.33382
+    code: https://github.com/ZJU-ACES-ISE/WideSWE
+  sources:
+  - https://arxiv.org/abs/2609.33382
+  last_verified: '2026-11-22'
+- id: xrepotest
+  title: 'XREPOTEST: Benchmarking Multilingual Repository-Level Unit Test Generation for Large Language
+    Models'
+  year: 2026
+  authors:
+  - Dung Le Quang
+  - Dong Cao Van
+  - Nam Le Hai
+  - Linh Ngo Van
+  - Anh M. T. Bui
+  - Phuong T. Nguyen
+  topics:
+  - ai-software-testing
+  arxiv: '2608.25939'
+  links:
+    paper: https://arxiv.org/abs/2608.25939
+    code: https://github.com/solis-team/XRepoTest
+  sources:
+  - https://arxiv.org/abs/2608.25939
+  last_verified: '2026-11-22'
+- id: swe-rl
+  title: 'SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution'
+  year: 2025
+  authors:
+  - Yuxiang Wei
+  - Olivier Duchenne
+  - Jade Copet
+  - Quentin Carbonneaux
+  - Lingming Zhang
+  - Daniel Fried
+  - Gabriel Synnaeve
+  - Rishabh Singh
+  - Sida I. Wang
+  topics:
+  - ai-agents
+  - ai-software-maintenance
+  arxiv: '2502.18449'
+  links:
+    paper: https://arxiv.org/abs/2502.18449
+    code: https://github.com/facebookresearch/swe-rl
+  sources:
+  - https://arxiv.org/abs/2502.18449
+  last_verified: '2026-11-22'
+- id: swe-smith
+  title: 'SWE-smith: Scaling Data for Software Engineering Agents'
+  year: 2025
+  authors:
+  - John Yang
+  - Kilian Lieret
+  - Carlos E. Jimenez
+  - Alexander Wettig
+  - Kabir Khandpur
+  - Yanzhe Zhang
+  - Binyuan Hui
+  - Ofir Press
+  - Ludwig Schmidt
+  - Diyi Yang
+  topics:
+  - ai-agents
+  arxiv: '2504.21798'
+  links:
+    paper: https://arxiv.org/abs/2504.21798
+    code: https://github.com/SWE-bench/SWE-smith
+  sources:
+  - https://arxiv.org/abs/2504.21798
+  last_verified: '2026-11-22'
+- id: llm-codegen-survey
+  title: A Survey on Large Language Models for Code Generation
+  year: 2024
+  authors:
+  - Juyong Jiang
+  - Fan Wang
+  - Jiasi Shen
+  - Sungju Kim
+  - Sunghun Kim
+  topics:
+  - ai-code-generation
+  - ai-empirical-se
+  arxiv: '2406.00515'
+  links:
+    paper: https://arxiv.org/abs/2406.00515
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2406.00515
+  last_verified: '2026-11-22'
+- id: agentless
+  title: 'Agentless: Demystifying LLM-based Software Engineering Agents'
+  year: 2024
+  authors:
+  - Chunqiu Steven Xia
+  - Yinlin Deng
+  - Soren Dunn
+  - Lingming Zhang
+  topics:
+  - ai-agents
+  - ai-software-maintenance
+  arxiv: '2407.01489'
+  links:
+    paper: https://arxiv.org/abs/2407.01489
+    code: https://github.com/OpenAutoCoder/Agentless
+  sources:
+  - https://arxiv.org/abs/2407.01489
+  last_verified: '2026-11-22'
+- id: autocoderover
+  title: 'AutoCodeRover: Autonomous Program Improvement'
+  year: 2024
+  authors:
+  - Yuntong Zhang
+  - Haifeng Ruan
+  - Zhiyu Fan
+  - Abhik Roychoudhury
+  topics:
+  - ai-agents
+  - ai-software-maintenance
+  arxiv: '2404.05427'
+  links:
+    paper: https://arxiv.org/abs/2404.05427
+    code: https://github.com/AutoCodeRoverSG/auto-code-rover
+  sources:
+  - https://arxiv.org/abs/2404.05427
+  last_verified: '2026-11-22'
+- id: bigcodebench
+  title: 'BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions'
+  year: 2024
+  authors:
+  - Terry Yue Zhuo
+  - Minh Chien Vu
+  - Jenny Chim
+  - Han Hu
+  - Wenhao Yu
+  - Ratnadira Widyasari
+  - Imam Nur Bani Yusuf
+  - Haolan Zhan
+  - Junda He
+  - Indraneil Paul
+  - Simon Brunner
+  - Chen Gong
+  - Thong Hoang
+  - Armel Randy Zebaze
+  - Xiaoheng Hong
+  - Wen-Ding Li
+  - Jean Kaddour
+  - Ming Xu
+  - Zhihan Zhang
+  - Prateek Yadav
+  - Naman Jain
+  - Alex Gu
+  - Zhoujun Cheng
+  - Jiawei Liu
+  - Qian Liu
+  - Zijian Wang
+  - Binyuan Hui
+  - Niklas Muennighoff
+  - David Lo
+  - Daniel Fried
+  - Xiaoning Du
+  - Harm de Vries
+  - Leandro Von Werra
+  topics:
+  - ai-empirical-se
+  - ai-code-generation
+  arxiv: '2406.15877'
+  links:
+    paper: https://arxiv.org/abs/2406.15877
+    code: https://github.com/bigcode-project/bigcodebench
+  sources:
+  - https://arxiv.org/abs/2406.15877
+  last_verified: '2026-11-22'
+- id: coverup
+  title: 'CoverUp: Effective High Coverage Test Generation for Python'
+  year: 2024
+  authors:
+  - Juan Altmayer Pizzorno
+  - Emery D. Berger
+  topics:
+  - ai-software-testing
+  arxiv: '2403.16218'
+  links:
+    paper: https://arxiv.org/abs/2403.16218
+    code: https://github.com/plasma-umass/coverup
+  sources:
+  - https://arxiv.org/abs/2403.16218
+  last_verified: '2026-11-22'
+- id: deepseek-coder
+  title: 'DeepSeek-Coder: When the Large Language Model Meets Programming -- The Rise of Code Intelligence'
+  year: 2024
+  authors:
+  - Daya Guo
+  - Qihao Zhu
+  - Dejian Yang
+  - Zhenda Xie
+  - Kai Dong
+  - Wentao Zhang
+  - Guanting Chen
+  - Xiao Bi
+  - Y. Wu
+  - Y. K. Li
+  - Fuli Luo
+  - Yingfei Xiong
+  - Wenfeng Liang
+  topics:
+  - ai-code-generation
+  arxiv: '2401.14196'
+  links:
+    paper: https://arxiv.org/abs/2401.14196
+    code: https://github.com/deepseek-ai/DeepSeek-Coder
+  sources:
+  - https://arxiv.org/abs/2401.14196
+  last_verified: '2026-11-22'
+- id: codeact
+  title: Executable Code Actions Elicit Better LLM Agents
+  year: 2024
+  authors:
+  - Xingyao Wang
+  - Yangyi Chen
+  - Lifan Yuan
+  - Yizhe Zhang
+  - Yunzhu Li
+  - Hao Peng
+  - Heng Ji
+  topics:
+  - ai-agents
+  arxiv: '2402.01030'
+  links:
+    paper: https://arxiv.org/abs/2402.01030
+    code: https://github.com/xingyaoww/code-act
+  sources:
+  - https://arxiv.org/abs/2402.01030
+  last_verified: '2026-11-22'
+- id: livecodebench
+  title: 'LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code'
+  year: 2024
+  authors:
+  - Naman Jain
+  - King Han
+  - Alex Gu
+  - Wen-Ding Li
+  - Fanjia Yan
+  - Tianjun Zhang
+  - Sida Wang
+  - Armando Solar-Lezama
+  - Koushik Sen
+  - Ion Stoica
+  topics:
+  - ai-empirical-se
+  - ai-code-generation
+  arxiv: '2403.07974'
+  links:
+    paper: https://arxiv.org/abs/2403.07974
+    code: https://github.com/LiveCodeBench/LiveCodeBench
+  sources:
+  - https://arxiv.org/abs/2403.07974
+  last_verified: '2026-11-22'
+- id: openhands
+  title: 'OpenHands: An Open Platform for AI Software Developers as Generalist Agents'
+  year: 2024
+  authors:
+  - Xingyao Wang
+  - Boxuan Li
+  - Yufan Song
+  - Frank F. Xu
+  - Xiangru Tang
+  - Mingchen Zhuge
+  - Jiayi Pan
+  - Yueqi Song
+  - Bowen Li
+  - Jaskirat Singh
+  - Hoang H. Tran
+  - Fuqiang Li
+  - Ren Ma
+  - Mingzhang Zheng
+  - Bill Qian
+  - Yanjun Shao
+  - Niklas Muennighoff
+  - Yizhe Zhang
+  - Binyuan Hui
+  - Junyang Lin
+  - Robert Brennan
+  - Hao Peng
+  - Heng Ji
+  - Graham Neubig
+  topics:
+  - ai-agents
+  arxiv: '2407.16741'
+  links:
+    paper: https://arxiv.org/abs/2407.16741
+    code: https://github.com/OpenHands/OpenHands
+  sources:
+  - https://arxiv.org/abs/2407.16741
+  last_verified: '2026-11-22'
+- id: qwen25-coder
+  title: Qwen2.5-Coder Technical Report
+  year: 2024
+  authors:
+  - Binyuan Hui
+  - Jian Yang
+  - Zeyu Cui
+  - Jiaxi Yang
+  - Dayiheng Liu
+  - Lei Zhang
+  - Tianyu Liu
+  - Jiajun Zhang
+  - Bowen Yu
+  - Keming Lu
+  - Kai Dang
+  - Yang Fan
+  - Yichang Zhang
+  - An Yang
+  - Rui Men
+  - Fei Huang
+  - Bo Zheng
+  - Yibo Miao
+  - Shanghaoran Quan
+  - Yunlong Feng
+  - Xingzhang Ren
+  - Xuancheng Ren
+  - Jingren Zhou
+  - Junyang Lin
+  topics:
+  - ai-code-generation
+  arxiv: '2409.12186'
+  links:
+    paper: https://arxiv.org/abs/2409.12186
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2409.12186
+  last_verified: '2026-11-22'
+- id: repairagent
+  title: 'RepairAgent: An Autonomous, LLM-Based Agent for Program Repair'
+  year: 2024
+  authors:
+  - Islem Bouzenia
+  - Premkumar Devanbu
+  - Michael Pradel
+  topics:
+  - ai-software-maintenance
+  - ai-agents
+  arxiv: '2403.17134'
+  links:
+    paper: https://arxiv.org/abs/2403.17134
+    code: https://github.com/sola-st/RepairAgent
+  sources:
+  - https://arxiv.org/abs/2403.17134
+  last_verified: '2026-11-22'
+- id: starcoder2
+  title: 'StarCoder 2 and The Stack v2: The Next Generation'
+  year: 2024
+  authors:
+  - Anton Lozhkov
+  - Raymond Li
+  - Loubna Ben Allal
+  - Federico Cassano
+  - Joel Lamy-Poirier
+  - Nouamane Tazi
+  - Ao Tang
+  - Dmytro Pykhtar
+  - Jiawei Liu
+  - Yuxiang Wei
+  - Tianyang Liu
+  - Max Tian
+  - Denis Kocetkov
+  - Arthur Zucker
+  - Younes Belkada
+  - Zijian Wang
+  - Qian Liu
+  - Dmitry Abulkhanov
+  - Indraneil Paul
+  - Zhuang Li
+  - Wen-Ding Li
+  - Megan Risdal
+  - Jia Li
+  - Jian Zhu
+  - Terry Yue Zhuo
+  - Evgenii Zheltonozhskii
+  - Nii Osae Osae Dade
+  - Wenhao Yu
+  - Lucas Krauß
+  - Naman Jain
+  - Yixuan Su
+  - Xuanli He
+  - Manan Dey
+  - Edoardo Abati
+  - Yekun Chai
+  - Niklas Muennighoff
+  - Xiangru Tang
+  - Muhtasham Oblokulov
+  - Christopher Akiki
+  - Marc Marone
+  - Chenghao Mou
+  - Mayank Mishra
+  - Alex Gu
+  - Binyuan Hui
+  - Tri Dao
+  - Armel Zebaze
+  - Olivier Dehaene
+  - Nicolas Patry
+  - Canwen Xu
+  - Julian McAuley
+  - Han Hu
+  - Torsten Scholak
+  - Sebastien Paquet
+  - Jennifer Robinson
+  - Carolyn Jane Anderson
+  - Nicolas Chapados
+  - Mostofa Patwary
+  - Nima Tajbakhsh
+  - Yacine Jernite
+  - Carlos Muñoz Ferrandis
+  - Lingming Zhang
+  - Sean Hughes
+  - Thomas Wolf
+  - Arjun Guha
+  - Leandro von Werra
+  - Harm de Vries
+  topics:
+  - ai-code-generation
+  arxiv: '2402.19173'
+  links:
+    paper: https://arxiv.org/abs/2402.19173
+    code: https://github.com/bigcode-project/starcoder2
+  sources:
+  - https://arxiv.org/abs/2402.19173
+  last_verified: '2026-11-22'
+- id: swe-agent
+  title: 'SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering'
+  year: 2024
+  authors:
+  - John Yang
+  - Carlos E. Jimenez
+  - Alexander Wettig
+  - Kilian Lieret
+  - Shunyu Yao
+  - Karthik Narasimhan
+  - Ofir Press
+  topics:
+  - ai-agents
+  arxiv: '2405.15793'
+  links:
+    paper: https://arxiv.org/abs/2405.15793
+    code: https://github.com/SWE-agent/SWE-agent
+  sources:
+  - https://arxiv.org/abs/2405.15793
+  last_verified: '2026-11-22'
+- id: swe-bench-multimodal
+  title: 'SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?'
+  year: 2024
+  authors:
+  - John Yang
+  - Carlos E. Jimenez
+  - Alex L. Zhang
+  - Kilian Lieret
+  - Joyce Yang
+  - Xindi Wu
+  - Ori Press
+  - Niklas Muennighoff
+  - Gabriel Synnaeve
+  - Karthik R. Narasimhan
+  - Diyi Yang
+  - Sida I. Wang
+  - Ofir Press
+  topics:
+  - ai-agents
+  - ai-empirical-se
+  arxiv: '2410.03859'
+  links:
+    paper: https://arxiv.org/abs/2410.03859
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2410.03859
+  last_verified: '2026-11-22'
+- id: swe-gym
+  title: Training Software Engineering Agents and Verifiers with SWE-Gym
+  year: 2024
+  authors:
+  - Jiayi Pan
+  - Xingyao Wang
+  - Graham Neubig
+  - Navdeep Jaitly
+  - Heng Ji
+  - Alane Suhr
+  - Yizhe Zhang
+  topics:
+  - ai-agents
+  arxiv: '2412.21139'
+  links:
+    paper: https://arxiv.org/abs/2412.21139
+    code: https://github.com/SWE-Gym/SWE-Gym
+  sources:
+  - https://arxiv.org/abs/2412.21139
+  last_verified: '2026-11-22'
+- id: primevul
+  title: 'Vulnerability Detection with Code Language Models: How Far Are We?'
+  year: 2024
+  authors:
+  - Yangruibo Ding
+  - Yanjun Fu
+  - Omniyyah Ibrahim
+  - Chawin Sitawarin
+  - Xinyun Chen
+  - Basel Alomair
+  - David Wagner
+  - Baishakhi Ray
+  - Yizheng Chen
+  topics:
+  - ai-software-security
+  - ai-empirical-se
+  arxiv: '2403.18624'
+  links:
+    paper: https://arxiv.org/abs/2403.18624
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2403.18624
+  last_verified: '2026-11-22'
+- id: testpilot
+  title: An Empirical Evaluation of Using Large Language Models for Automated Unit Test Generation
+  year: 2023
+  authors:
+  - Max Schäfer
+  - Sarah Nadi
+  - Aryaz Eghbali
+  - Frank Tip
+  topics:
+  - ai-software-testing
+  - ai-empirical-se
+  arxiv: '2302.06527'
+  links:
+    paper: https://arxiv.org/abs/2302.06527
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2302.06527
+  last_verified: '2026-11-22'
+- id: chatdev
+  title: 'ChatDev: Communicative Agents for Software Development'
+  year: 2023
+  authors:
+  - Chen Qian
+  - Wei Liu
+  - Hongzhang Liu
+  - Nuo Chen
+  - Yufan Dang
+  - Jiahao Li
+  - Cheng Yang
+  - Weize Chen
+  - Yusheng Su
+  - Xin Cong
+  - Juyuan Xu
+  - Dahai Li
+  - Zhiyuan Liu
+  - Maosong Sun
+  topics:
+  - ai-agents
+  - ai-software-architecture
+  arxiv: '2307.07924'
+  links:
+    paper: https://arxiv.org/abs/2307.07924
+    code: https://github.com/OpenBMB/ChatDev
+  sources:
+  - https://arxiv.org/abs/2307.07924
+  last_verified: '2026-11-22'
+- id: code-llama
+  title: 'Code Llama: Open Foundation Models for Code'
+  year: 2023
+  authors:
+  - Baptiste Rozière
+  - Jonas Gehring
+  - Fabian Gloeckle
+  - Sten Sootla
+  - Itai Gat
+  - Xiaoqing Ellen Tan
+  - Yossi Adi
+  - Jingyu Liu
+  - Romain Sauvestre
+  - Tal Remez
+  - Jérémy Rapin
+  - Artyom Kozhevnikov
+  - Ivan Evtimov
+  - Joanna Bitton
+  - Manish Bhatt
+  - Cristian Canton Ferrer
+  - Aaron Grattafiori
+  - Wenhan Xiong
+  - Alexandre Défossez
+  - Jade Copet
+  - Faisal Azhar
+  - Hugo Touvron
+  - Louis Martin
+  - Nicolas Usunier
+  - Thomas Scialom
+  - Gabriel Synnaeve
+  topics:
+  - ai-code-generation
+  arxiv: '2308.12950'
+  links:
+    paper: https://arxiv.org/abs/2308.12950
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2308.12950
+  last_verified: '2026-11-22'
+- id: fuzz4all
+  title: 'Fuzz4All: Universal Fuzzing with Large Language Models'
+  year: 2023
+  authors:
+  - Chunqiu Steven Xia
+  - Matteo Paltenghi
+  - Jia Le Tian
+  - Michael Pradel
+  - Lingming Zhang
+  topics:
+  - ai-software-testing
+  - ai-software-security
+  arxiv: '2308.04748'
+  links:
+    paper: https://arxiv.org/abs/2308.04748
+    code: https://github.com/fuzz4all/fuzz4all
+  sources:
+  - https://arxiv.org/abs/2308.04748
+  last_verified: '2026-11-22'
+- id: evalplus
+  title: Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of Large Language Models
+    for Code Generation
+  year: 2023
+  authors:
+  - Jiawei Liu
+  - Chunqiu Steven Xia
+  - Yuyao Wang
+  - Lingming Zhang
+  topics:
+  - ai-empirical-se
+  - ai-software-testing
+  arxiv: '2305.01210'
+  links:
+    paper: https://arxiv.org/abs/2305.01210
+    code: https://github.com/evalplus/evalplus
+  sources:
+  - https://arxiv.org/abs/2305.01210
+  last_verified: '2026-11-22'
+- id: chatrepair
+  title: 'Keep the Conversation Going: Fixing 162 out of 337 bugs for $0.42 each using ChatGPT'
+  year: 2023
+  authors:
+  - Chunqiu Steven Xia
+  - Lingming Zhang
+  topics:
+  - ai-software-maintenance
+  arxiv: '2304.00385'
+  links:
+    paper: https://arxiv.org/abs/2304.00385
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2304.00385
+  last_verified: '2026-11-22'
+- id: llm4se-slr
+  title: 'Large Language Models for Software Engineering: A Systematic Literature Review'
+  year: 2023
+  authors:
+  - Xinyi Hou
+  - Yanjie Zhao
+  - Yue Liu
+  - Zhou Yang
+  - Kailong Wang
+  - Li Li
+  - Xiapu Luo
+  - David Lo
+  - John Grundy
+  - Haoyu Wang
+  topics:
+  - ai-empirical-se
+  arxiv: '2308.10620'
+  links:
+    paper: https://arxiv.org/abs/2308.10620
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2308.10620
+  last_verified: '2026-11-22'
+- id: llm4se-survey-open-problems
+  title: 'Large Language Models for Software Engineering: Survey and Open Problems'
+  year: 2023
+  authors:
+  - Angela Fan
+  - Beliz Gokkaya
+  - Mark Harman
+  - Mitya Lyubarskiy
+  - Shubho Sengupta
+  - Shin Yoo
+  - Jie M. Zhang
+  topics:
+  - ai-empirical-se
+  arxiv: '2310.03533'
+  links:
+    paper: https://arxiv.org/abs/2310.03533
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2310.03533
+  last_verified: '2026-11-22'
+- id: magicoder
+  title: 'Magicoder: Empowering Code Generation with OSS-Instruct'
+  year: 2023
+  authors:
+  - Yuxiang Wei
+  - Zhe Wang
+  - Jiawei Liu
+  - Yifeng Ding
+  - Lingming Zhang
+  topics:
+  - ai-code-generation
+  arxiv: '2312.02120'
+  links:
+    paper: https://arxiv.org/abs/2312.02120
+    code: https://github.com/ise-uiuc/magicoder
+  sources:
+  - https://arxiv.org/abs/2312.02120
+  last_verified: '2026-11-22'
+- id: metagpt
+  title: 'MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework'
+  year: 2023
+  authors:
+  - Sirui Hong
+  - Mingchen Zhuge
+  - Jiaqi Chen
+  - Xiawu Zheng
+  - Yuheng Cheng
+  - Ceyao Zhang
+  - Jinlin Wang
+  - Zili Wang
+  - Steven Ka Shing Yau
+  - Zijuan Lin
+  - Liyang Zhou
+  - Chenyu Ran
+  - Lingfeng Xiao
+  - Chenglin Wu
+  - Jürgen Schmidhuber
+  topics:
+  - ai-agents
+  - ai-requirements
+  arxiv: '2308.00352'
+  links:
+    paper: https://arxiv.org/abs/2308.00352
+    code: https://github.com/FoundationAgents/MetaGPT
+  sources:
+  - https://arxiv.org/abs/2308.00352
+  last_verified: '2026-11-22'
+- id: octopack
+  title: 'OctoPack: Instruction Tuning Code Large Language Models'
+  year: 2023
+  authors:
+  - Niklas Muennighoff
+  - Qian Liu
+  - Armel Zebaze
+  - Qinkai Zheng
+  - Binyuan Hui
+  - Terry Yue Zhuo
+  - Swayam Singh
+  - Xiangru Tang
+  - Leandro von Werra
+  - Shayne Longpre
+  topics:
+  - ai-code-generation
+  arxiv: '2308.07124'
+  links:
+    paper: https://arxiv.org/abs/2308.07124
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2308.07124
+  last_verified: '2026-11-22'
+- id: repocoder
+  title: 'RepoCoder: Repository-Level Code Completion Through Iterative Retrieval and Generation'
+  year: 2023
+  authors:
+  - Fengji Zhang
+  - Bei Chen
+  - Yue Zhang
+  - Jacky Keung
+  - Jin Liu
+  - Daoguang Zan
+  - Yi Mao
+  - Jian-Guang Lou
+  - Weizhu Chen
+  topics:
+  - ai-code-generation
+  arxiv: '2303.12570'
+  links:
+    paper: https://arxiv.org/abs/2303.12570
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2303.12570
+  last_verified: '2026-11-22'
+- id: starcoder
+  title: 'StarCoder: may the source be with you!'
+  year: 2023
+  authors:
+  - Raymond Li
+  - Loubna Ben Allal
+  - Yangtian Zi
+  - Niklas Muennighoff
+  - Denis Kocetkov
+  - Chenghao Mou
+  - Marc Marone
+  - Christopher Akiki
+  - Jia Li
+  - Jenny Chim
+  - Qian Liu
+  - Evgenii Zheltonozhskii
+  - Terry Yue Zhuo
+  - Thomas Wang
+  - Olivier Dehaene
+  - Mishig Davaadorj
+  - Joel Lamy-Poirier
+  - João Monteiro
+  - Oleh Shliazhko
+  - Nicolas Gontier
+  - Nicholas Meade
+  - Armel Zebaze
+  - Ming-Ho Yee
+  - Logesh Kumar Umapathi
+  - Jian Zhu
+  - Benjamin Lipkin
+  - Muhtasham Oblokulov
+  - Zhiruo Wang
+  - Rudra Murthy
+  - Jason Stillerman
+  - Siva Sankalp Patel
+  - Dmitry Abulkhanov
+  - Marco Zocca
+  - Manan Dey
+  - Zhihan Zhang
+  - Nour Fahmy
+  - Urvashi Bhattacharyya
+  - Wenhao Yu
+  - Swayam Singh
+  - Sasha Luccioni
+  - Paulo Villegas
+  - Maxim Kunakov
+  - Fedor Zhdanov
+  - Manuel Romero
+  - Tony Lee
+  - Nadav Timor
+  - Jennifer Ding
+  - Claire Schlesinger
+  - Hailey Schoelkopf
+  - Jan Ebert
+  - Tri Dao
+  - Mayank Mishra
+  - Alex Gu
+  - Jennifer Robinson
+  - Carolyn Jane Anderson
+  - Brendan Dolan-Gavitt
+  - Danish Contractor
+  - Siva Reddy
+  - Daniel Fried
+  - Dzmitry Bahdanau
+  - Yacine Jernite
+  - Carlos Muñoz Ferrandis
+  - Sean Hughes
+  - Thomas Wolf
+  - Arjun Guha
+  - Leandro von Werra
+  - Harm de Vries
+  topics:
+  - ai-code-generation
+  arxiv: '2305.06161'
+  links:
+    paper: https://arxiv.org/abs/2305.06161
+    code: https://github.com/bigcode-project/starcoder
+  sources:
+  - https://arxiv.org/abs/2305.06161
+  last_verified: '2026-11-22'
+- id: swe-bench
+  title: 'SWE-bench: Can Language Models Resolve Real-World GitHub Issues?'
+  year: 2023
+  authors:
+  - Carlos E. Jimenez
+  - John Yang
+  - Alexander Wettig
+  - Shunyu Yao
+  - Kexin Pei
+  - Ofir Press
+  - Karthik Narasimhan
+  topics:
+  - ai-agents
+  - ai-empirical-se
+  arxiv: '2310.06770'
+  links:
+    paper: https://arxiv.org/abs/2310.06770
+    code: https://github.com/SWE-bench/SWE-bench
+  sources:
+  - https://arxiv.org/abs/2310.06770
+  last_verified: '2026-11-22'
+- id: self-debug
+  title: Teaching Large Language Models to Self-Debug
+  year: 2023
+  authors:
+  - Xinyun Chen
+  - Maxwell Lin
+  - Nathanael Schärli
+  - Denny Zhou
+  topics:
+  - ai-code-generation
+  - ai-software-maintenance
+  arxiv: '2304.05128'
+  links:
+    paper: https://arxiv.org/abs/2304.05128
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2304.05128
+  last_verified: '2026-11-22'
+- id: wizardcoder
+  title: 'WizardCoder: Empowering Code Large Language Models with Evol-Instruct'
+  year: 2023
+  authors:
+  - Ziyang Luo
+  - Can Xu
+  - Pu Zhao
+  - Qingfeng Sun
+  - Xiubo Geng
+  - Wenxiang Hu
+  - Chongyang Tao
+  - Jing Ma
+  - Qingwei Lin
+  - Daxin Jiang
+  topics:
+  - ai-code-generation
+  arxiv: '2306.08568'
+  links:
+    paper: https://arxiv.org/abs/2306.08568
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2306.08568
+  last_verified: '2026-11-22'
+- id: codegen
+  title: 'CodeGen: An Open Large Language Model for Code with Multi-Turn Program Synthesis'
+  year: 2022
+  authors:
+  - Erik Nijkamp
+  - Bo Pang
+  - Hiroaki Hayashi
+  - Lifu Tu
+  - Huan Wang
+  - Yingbo Zhou
+  - Silvio Savarese
+  - Caiming Xiong
+  topics:
+  - ai-code-generation
+  arxiv: '2203.13474'
+  links:
+    paper: https://arxiv.org/abs/2203.13474
+    code: https://github.com/salesforce/CodeGen
+  sources:
+  - https://arxiv.org/abs/2203.13474
+  last_verified: '2026-11-22'
+- id: coderl
+  title: 'CodeRL: Mastering Code Generation through Pretrained Models and Deep Reinforcement Learning'
+  year: 2022
+  authors:
+  - Hung Le
+  - Yue Wang
+  - Akhilesh Deepak Gotmare
+  - Silvio Savarese
+  - Steven C. H. Hoi
+  topics:
+  - ai-code-generation
+  arxiv: '2207.01780'
+  links:
+    paper: https://arxiv.org/abs/2207.01780
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2207.01780
+  last_verified: '2026-11-22'
+- id: codet
+  title: 'CodeT: Code Generation with Generated Tests'
+  year: 2022
+  authors:
+  - Bei Chen
+  - Fengji Zhang
+  - Anh Nguyen
+  - Daoguang Zan
+  - Zeqi Lin
+  - Jian-Guang Lou
+  - Weizhu Chen
+  topics:
+  - ai-code-generation
+  - ai-software-testing
+  arxiv: '2207.10397'
+  links:
+    paper: https://arxiv.org/abs/2207.10397
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2207.10397
+  last_verified: '2026-11-22'
+- id: alphacode
+  title: Competition-Level Code Generation with AlphaCode
+  year: 2022
+  authors:
+  - Yujia Li
+  - David Choi
+  - Junyoung Chung
+  - Nate Kushman
+  - Julian Schrittwieser
+  - Rémi Leblond
+  - Tom Eccles
+  - James Keeling
+  - Felix Gimeno
+  - Agustin Dal Lago
+  - Thomas Hubert
+  - Peter Choy
+  - Cyprien de Masson d'Autume
+  - Igor Babuschkin
+  - Xinyun Chen
+  - Po-Sen Huang
+  - Johannes Welbl
+  - Sven Gowal
+  - Alexey Cherepanov
+  - James Molloy
+  - Daniel J. Mankowitz
+  - Esme Sutherland Robson
+  - Pushmeet Kohli
+  - Nando de Freitas
+  - Koray Kavukcuoglu
+  - Oriol Vinyals
+  topics:
+  - ai-code-generation
+  arxiv: '2203.07814'
+  links:
+    paper: https://arxiv.org/abs/2203.07814
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2203.07814
+  last_verified: '2026-11-22'
+- id: insecure-code-ai-assistants
+  title: Do Users Write More Insecure Code with AI Assistants?
+  year: 2022
+  authors:
+  - Neil Perry
+  - Megha Srivastava
+  - Deepak Kumar
+  - Dan Boneh
+  topics:
+  - ai-software-security
+  - ai-empirical-se
+  arxiv: '2211.03622'
+  links:
+    paper: https://arxiv.org/abs/2211.03622
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2211.03622
+  last_verified: '2026-11-22'
+- id: incoder
+  title: 'InCoder: A Generative Model for Code Infilling and Synthesis'
+  year: 2022
+  authors:
+  - Daniel Fried
+  - Armen Aghajanyan
+  - Jessy Lin
+  - Sida Wang
+  - Eric Wallace
+  - Freda Shi
+  - Ruiqi Zhong
+  - Wen-tau Yih
+  - Luke Zettlemoyer
+  - Mike Lewis
+  topics:
+  - ai-code-generation
+  arxiv: '2204.05999'
+  links:
+    paper: https://arxiv.org/abs/2204.05999
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2204.05999
+  last_verified: '2026-11-22'
+- id: titanfuzz
+  title: 'Large Language Models are Zero-Shot Fuzzers: Fuzzing Deep-Learning Libraries via Large Language
+    Models'
+  year: 2022
+  authors:
+  - Yinlin Deng
+  - Chunqiu Steven Xia
+  - Haoran Peng
+  - Chenyuan Yang
+  - Lingming Zhang
+  topics:
+  - ai-software-testing
+  arxiv: '2212.14834'
+  links:
+    paper: https://arxiv.org/abs/2212.14834
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2212.14834
+  last_verified: '2026-11-22'
+- id: practical-apr-llm
+  title: Practical Program Repair in the Era of Large Pre-trained Language Models
+  year: 2022
+  authors:
+  - Chunqiu Steven Xia
+  - Yuxiang Wei
+  - Lingming Zhang
+  topics:
+  - ai-software-maintenance
+  - ai-empirical-se
+  arxiv: '2210.14179'
+  links:
+    paper: https://arxiv.org/abs/2210.14179
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2210.14179
+  last_verified: '2026-11-22'
+- id: asleep-at-the-keyboard
+  title: Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions
+  year: 2021
+  authors:
+  - Hammond Pearce
+  - Baleegh Ahmad
+  - Benjamin Tan
+  - Brendan Dolan-Gavitt
+  - Ramesh Karri
+  topics:
+  - ai-software-security
+  - ai-empirical-se
+  arxiv: '2108.09293'
+  links:
+    paper: https://arxiv.org/abs/2108.09293
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2108.09293
+  last_verified: '2026-11-22'
+- id: codet5
+  title: 'CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and
+    Generation'
+  year: 2021
+  authors:
+  - Yue Wang
+  - Weishi Wang
+  - Shafiq Joty
+  - Steven C. H. Hoi
+  topics:
+  - ai-code-generation
+  - ai-program-analysis
+  arxiv: '2109.00859'
+  links:
+    paper: https://arxiv.org/abs/2109.00859
+    code: https://github.com/salesforce/CodeT5
+  sources:
+  - https://arxiv.org/abs/2109.00859
+  last_verified: '2026-11-22'
+- id: codexglue
+  title: 'CodeXGLUE: A Machine Learning Benchmark Dataset for Code Understanding and Generation'
+  year: 2021
+  authors:
+  - Shuai Lu
+  - Daya Guo
+  - Shuo Ren
+  - Junjie Huang
+  - Alexey Svyatkovskiy
+  - Ambrosio Blanco
+  - Colin Clement
+  - Dawn Drain
+  - Daxin Jiang
+  - Duyu Tang
+  - Ge Li
+  - Lidong Zhou
+  - Linjun Shou
+  - Long Zhou
+  - Michele Tufano
+  - Ming Gong
+  - Ming Zhou
+  - Nan Duan
+  - Neel Sundaresan
+  - Shao Kun Deng
+  - Shengyu Fu
+  - Shujie Liu
+  topics:
+  - ai-empirical-se
+  - ai-program-analysis
+  arxiv: '2102.04664'
+  links:
+    paper: https://arxiv.org/abs/2102.04664
+    code: https://github.com/microsoft/CodeXGLUE
+  sources:
+  - https://arxiv.org/abs/2102.04664
+  last_verified: '2026-11-22'
+- id: codex-humaneval
+  title: Evaluating Large Language Models Trained on Code
+  year: 2021
+  authors:
+  - Mark Chen
+  - Jerry Tworek
+  - Heewoo Jun
+  - Qiming Yuan
+  - Henrique Ponde de Oliveira Pinto
+  - Jared Kaplan
+  - Harri Edwards
+  - Yuri Burda
+  - Nicholas Joseph
+  - Greg Brockman
+  - Alex Ray
+  - Raul Puri
+  - Gretchen Krueger
+  - Michael Petrov
+  - Heidy Khlaaf
+  - Girish Sastry
+  - Pamela Mishkin
+  - Brooke Chan
+  - Scott Gray
+  - Nick Ryder
+  - Mikhail Pavlov
+  - Alethea Power
+  - Lukasz Kaiser
+  - Mohammad Bavarian
+  - Clemens Winter
+  - Philippe Tillet
+  - Felipe Petroski Such
+  - Dave Cummings
+  - Matthias Plappert
+  - Fotios Chantzis
+  - Elizabeth Barnes
+  - Ariel Herbert-Voss
+  - William Hebgen Guss
+  - Alex Nichol
+  - Alex Paino
+  - Nikolas Tezak
+  - Jie Tang
+  - Igor Babuschkin
+  - Suchir Balaji
+  - Shantanu Jain
+  - William Saunders
+  - Christopher Hesse
+  - Andrew N. Carr
+  - Jan Leike
+  - Josh Achiam
+  - Vedant Misra
+  - Evan Morikawa
+  - Alec Radford
+  - Matthew Knight
+  - Miles Brundage
+  - Mira Murati
+  - Katie Mayer
+  - Peter Welinder
+  - Bob McGrew
+  - Dario Amodei
+  - Sam McCandlish
+  - Ilya Sutskever
+  - Wojciech Zaremba
+  topics:
+  - ai-code-generation
+  - ai-empirical-se
+  arxiv: '2107.03374'
+  links:
+    paper: https://arxiv.org/abs/2107.03374
+    code: https://github.com/openai/human-eval
+  sources:
+  - https://arxiv.org/abs/2107.03374
+  last_verified: '2026-11-22'
+- id: apps
+  title: Measuring Coding Challenge Competence With APPS
+  year: 2021
+  authors:
+  - Dan Hendrycks
+  - Steven Basart
+  - Saurav Kadavath
+  - Mantas Mazeika
+  - Akul Arora
+  - Ethan Guo
+  - Collin Burns
+  - Samir Puranik
+  - Horace He
+  - Dawn Song
+  - Jacob Steinhardt
+  topics:
+  - ai-code-generation
+  - ai-empirical-se
+  arxiv: '2105.09938'
+  links:
+    paper: https://arxiv.org/abs/2105.09938
+    code: https://github.com/hendrycks/apps
+  sources:
+  - https://arxiv.org/abs/2105.09938
+  last_verified: '2026-11-22'
+- id: mbpp
+  title: Program Synthesis with Large Language Models
+  year: 2021
+  authors:
+  - Jacob Austin
+  - Augustus Odena
+  - Maxwell Nye
+  - Maarten Bosma
+  - Henryk Michalewski
+  - David Dohan
+  - Ellen Jiang
+  - Carrie Cai
+  - Michael Terry
+  - Quoc Le
+  - Charles Sutton
+  topics:
+  - ai-code-generation
+  - ai-empirical-se
+  arxiv: '2108.07732'
+  links:
+    paper: https://arxiv.org/abs/2108.07732
+    code: ''
+  sources:
+  - https://arxiv.org/abs/2108.07732
+  last_verified: '2026-11-22'
+- id: codebert
+  title: 'CodeBERT: A Pre-Trained Model for Programming and Natural Languages'
+  year: 2020
+  authors:
+  - Zhangyin Feng
+  - Daya Guo
+  - Duyu Tang
+  - Nan Duan
+  - Xiaocheng Feng
+  - Ming Gong
+  - Linjun Shou
+  - Bing Qin
+  - Ting Liu
+  - Daxin Jiang
+  - Ming Zhou
+  topics:
+  - ai-program-analysis
+  arxiv: '2002.08155'
+  links:
+    paper: https://arxiv.org/abs/2002.08155
+    code: https://github.com/microsoft/CodeBERT
+  sources:
+  - https://arxiv.org/abs/2002.08155
+  last_verified: '2026-11-22'
+- id: graphcodebert
+  title: 'GraphCodeBERT: Pre-training Code Representations with Data Flow'
+  year: 2020
+  authors:
+  - Daya Guo
+  - Shuo Ren
+  - Shuai Lu
+  - Zhangyin Feng
+  - Duyu Tang
+  - Shujie Liu
+  - Long Zhou
+  - Nan Duan
+  - Alexey Svyatkovskiy
+  - Shengyu Fu
+  - Michele Tufano
+  - Shao Kun Deng
+  - Colin Clement
+  - Dawn Drain
+  - Neel Sundaresan
+  - Jian Yin
+  - Daxin Jiang
+  - Ming Zhou
+  topics:
+  - ai-program-analysis
+  arxiv: '2009.08366'
+  links:
+    paper: https://arxiv.org/abs/2009.08366
+    code: https://github.com/microsoft/CodeBERT
+  sources:
+  - https://arxiv.org/abs/2009.08366
+  last_verified: '2026-11-22'

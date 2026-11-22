@@ -1,0 +1,24 @@
+name: Add a paper
+description: Suggest a paper in AI for Software Engineering.
+title: "[Paper] "
+labels: ["new-record", "paper"]
+body:
+  - type: input
+    id: title
+    attributes: { label: Exact title }
+    validations: { required: true }
+  - type: input
+    id: link
+    attributes: { label: Paper link, description: "arXiv abstract page or DOI landing page (https://)." }
+    validations: { required: true }
+  - type: input
+    id: code
+    attributes: { label: Code repository (optional) }
+  - type: input
+    id: topics
+    attributes: { label: Topic IDs, description: "From data/topics.yaml, comma-separated." }
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes: { label: Why it belongs in the atlas, description: "One or two factual sentences, e.g. it introduced a benchmark, model, method or tool that others use." }
+    validations: { required: true }
