@@ -10,7 +10,7 @@ Open source · No rankings · Alphabetical · Every researcher, paper and projec
 
 <a href="https://xiaobo-coder.github.io/AI4SE-Atlas/"><img src="assets/atlas-map.svg" alt="Animated map of the AI4SE Atlas research topics and how they connect" width="820"></a>
 
-[**Website**](https://xiaobo-coder.github.io/AI4SE-Atlas/) · [Researchers](https://xiaobo-coder.github.io/AI4SE-Atlas/researchers/) · [Topics](https://xiaobo-coder.github.io/AI4SE-Atlas/topics/) · [Papers](https://xiaobo-coder.github.io/AI4SE-Atlas/papers/) · [Projects](https://xiaobo-coder.github.io/AI4SE-Atlas/projects/) · [Contribute](CONTRIBUTING.md)
+[**Website**](https://xiaobo-coder.github.io/AI4SE-Atlas/) · [Explore](https://xiaobo-coder.github.io/AI4SE-Atlas/explore/) · [Researchers](https://xiaobo-coder.github.io/AI4SE-Atlas/researchers/) · [Topics](https://xiaobo-coder.github.io/AI4SE-Atlas/topics/) · [Papers](https://xiaobo-coder.github.io/AI4SE-Atlas/papers/) · [Projects](https://xiaobo-coder.github.io/AI4SE-Atlas/projects/) · [Contribute](CONTRIBUTING.md)
 
 </div>
 
@@ -23,7 +23,7 @@ Most "awesome" lists are flat collections of links. AI4SE Atlas keeps a small **
 | | |
 |---|---|
 | **For people** | Browse researchers A–Z, explore ten research topics, find papers and the code that implements them. |
-| **For machines** | YAML source files, JSON Schema contracts, JSON and BibTeX exports, schema.org metadata on the home, researcher and topic pages. |
+| **For machines** | YAML source files, JSON Schema contracts, JSON / CSV / BibTeX exports, a page per paper with Google Scholar `citation_*` tags and schema.org `ScholarlyArticle`, a sitemap and `llms.txt`. |
 | **Fair by design** | No rankings, no citation counts, no popularity order. Corrections and removal on request. |
 
 ## Use the data
@@ -42,7 +42,7 @@ papers = yaml.safe_load(open("data/papers.yaml"))
 agents = [p["title"] for p in papers if "ai-agents" in p["topics"]]
 ```
 
-Endpoints: `data/atlas.json`, `data/researchers.json`, `data/topics.json`, `data/papers.json`, `data/projects.json`, `data/papers.bib`.
+Endpoints: `data/atlas.json`, `data/researchers.json`, `data/topics.json`, `data/papers.json`, `data/projects.json`, `data/papers.csv`, `data/papers.bib`, `sitemap.xml`, `llms.txt`.
 
 ## Research topics (v1)
 
@@ -102,9 +102,9 @@ npm run build        # static site in website/dist/
 
 ## Deploy (GitHub Pages)
 
-1. Create an empty public repository named `AI4SE-Atlas`.
-2. In that repository: **Settings → Pages → Build and deployment → Source: GitHub Actions** (do this before the first push; otherwise the first deploy fails and you simply re-run it from the Actions tab).
-3. Push this folder to the `main` branch. The `deploy` workflow builds and publishes on every push to `main` (and on manual runs). It sets the site URL and base path automatically; for a custom domain or another repository name, the base path comes from GitHub Pages, and local builds can override it with `ATLAS_BASE` and `ATLAS_SITE`.
+1. Create a public repository named `AI4SE-Atlas` and push this folder to `main`. (An empty repository has no Pages source option yet.) The first `deploy` run fails because Pages is not enabled; that is expected.
+2. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+3. **Actions → deploy → Run workflow.** After that, every push to `main` redeploys automatically. The workflow sets the site URL and base path; local builds can override them with `ATLAS_BASE` and `ATLAS_SITE`.
 4. Create the issue labels used by the templates: `new-record`, `researcher`, `paper`, `project`, `correction`, `taxonomy`. Enable **Settings → Security → Private vulnerability reporting**.
 5. Optional: **Settings → General → Social preview** → upload `assets/social-preview.png`.
 

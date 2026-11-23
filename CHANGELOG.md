@@ -2,6 +2,16 @@
 
 All notable changes to the data model, taxonomy, data and website. The project follows [Semantic Versioning](https://semver.org/) for its data schema.
 
+## [0.2.0] - 2026-11-22
+
+### Added
+- Explore page: interactive timeline of papers by topic (search, year range, code filter, table view, CSV/JSON/BibTeX downloads) and a topic-by-year coverage heatmap.
+- A page per paper with Google Scholar `citation_*` meta tags, schema.org `ScholarlyArticle`, BibTeX and links to authors and projects in the atlas.
+- `data/papers.csv`, `sitemap.xml`, `llms.txt`.
+
+### Changed
+- Editorial redesign: dark theme by default, large display type, monospace labels, timeline on the home page.
+
 ## [0.1.0] - 2026-11-22
 
 ### Added

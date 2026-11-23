@@ -41,7 +41,8 @@ export const byResearcher = (a: Researcher, b: Researcher) =>
 
 export const topics = read<Topic>('topics.yaml');
 export const researchers = read<Researcher>('researchers.yaml').sort(byResearcher);
-export const papers = read<Paper>('papers.yaml').sort((a, b) => b.year - a.year || collator.compare(a.title, b.title));
+const ym = (p: Paper) => (p.arxiv ? Number(p.arxiv.slice(0, 4)) : (p.year - 2000) * 100 + 6); // YYMM from the arXiv ID
+export const papers = read<Paper>('papers.yaml').sort((a, b) => b.year - a.year || ym(b) - ym(a) || collator.compare(a.title, b.title));
 export const projects = read<Project>('projects.yaml').sort((a, b) => collator.compare(a.name, b.name));
 
 export const topicById = new Map(topics.map((t) => [t.id, t]));

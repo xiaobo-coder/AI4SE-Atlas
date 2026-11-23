@@ -10,6 +10,23 @@
   --color-accent-2: #0891b2;
 }
 
+/* ---------- editorial type ---------- */
+.display { font-size: clamp(2.6rem, 7.2vw, 6.25rem); line-height: .95; font-weight: 800; letter-spacing: -0.045em; color: var(--color-ink); }
+.dark .display { color: #fff; }
+.eyebrow { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: #52514e; }
+.dark .eyebrow { color: #9aa0ad; }
+.text-accent { color: #0f766e; }
+.dark .text-accent { color: #5eead4; }
+.btn-accent { display: inline-flex; align-items: center; gap: .4rem; border-radius: 999px; padding: .55rem 1.1rem; font-weight: 600; font-size: .95rem; background: #0f766e; color: #fff; transition: transform .15s, background .15s; }
+.btn-accent:hover { background: #115e59; transform: translateY(-1px); }
+.dark .btn-accent { background: #5eead4; color: #04201c; }
+.dark .btn-accent:hover { background: #99f6e4; }
+.btn-ghost { display: inline-flex; align-items: center; gap: .4rem; border-radius: 999px; padding: .5rem 1rem; font-weight: 500; font-size: .95rem; border: 1px solid rgb(148 163 184 / .5); transition: border-color .15s, color .15s; }
+.btn-ghost:hover { border-color: #14b8a6; color: #0f766e; }
+.dark .btn-ghost:hover { color: #5eead4; }
+.grid-bg { background-image: linear-gradient(to right, rgb(148 163 184 / .12) 1px, transparent 1px), linear-gradient(to bottom, rgb(148 163 184 / .12) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at 30% 40%, #000 30%, transparent 75%); }
+.stat { font-family: var(--font-mono); font-weight: 700; font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1; letter-spacing: -0.04em; }
+
 :root { color-scheme: light; }
 .dark { color-scheme: dark; }
 
@@ -44,7 +61,8 @@ body { font-feature-settings: "ss01", "cv11"; }
 .dark .map-node:focus-visible circle.core { stroke: #a5b4fc; }
 .floaty { animation: float 6s ease-in-out infinite; }
 
-.az-link[aria-current="true"] { background: var(--color-accent); color: white; }
+.az-link[aria-current="true"] { background: rgb(15 23 42 / .08); color: #0f172a; }
+.dark .az-link[aria-current="true"] { background: rgb(255 255 255 / .12); color: #fff; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
@@ -53,3 +71,25 @@ body { font-feature-settings: "ss01", "cv11"; }
 
 /* hide elements filtered out by client-side search */
 [hidden] { display: none !important; }
+
+/* ---------- data viz (single series; tokens per mode) ---------- */
+.viz-root { --viz-mark: #2a78d6; --viz-ring: #ffffff; --viz-grid: rgb(15 23 42 / .07); --viz-axis: #52514e; --viz-hot: #0b0b0b;
+  --tip-bg: #ffffff; --tip-fg: #0b0b0b; --tip-bd: #e5e7eb; }
+.dark .viz-root { --viz-mark: #3987e5; --viz-ring: #0b0d12; --viz-grid: rgb(255 255 255 / .07); --viz-axis: #c3c2b7; --viz-hot: #f0efec;
+  --tip-bg: #15171d; --tip-fg: #f0efec; --tip-bd: #2a2d36; }
+.viz-grid line { stroke: var(--viz-grid); stroke-width: 1; }
+.viz-grid .viz-lane { stroke-dasharray: 2 4; }
+.viz-axis text { fill: var(--viz-axis); font-family: var(--font-mono); }
+.viz-axis .viz-lane-label { font-family: var(--font-sans); font-weight: 600; }
+.viz-dots circle { fill: var(--viz-mark); stroke: var(--viz-ring); stroke-width: 2; transition: opacity .15s, r .15s; cursor: pointer; }
+.viz-dots a:focus-visible circle, .viz-dots circle.is-hot { r: 7; fill: var(--viz-hot); }
+.has-hot .viz-dots circle:not(.is-hot) { opacity: .25; }
+.viz-dots circle.is-off { opacity: .06 !important; pointer-events: none; }
+.viz-tip { background: var(--tip-bg); color: var(--tip-fg); border-color: var(--tip-bd); }
+.heat-cell { stroke: var(--viz-ring); stroke-width: 2; }
+
+/* consistent, touch-friendly selects (Safari ignores padding on native selects) */
+select { -webkit-appearance: none; appearance: none; min-height: 2.75rem; padding-right: 2.25rem !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right .85rem center; }
+input[type="search"] { min-height: 2.75rem; }

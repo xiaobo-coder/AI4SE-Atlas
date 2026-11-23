@@ -4,7 +4,7 @@ import { researchers, papers, projects, topics, url } from '../utils/data';
 const items = [
   ...researchers.map((r) => ({ k: 'Researcher', t: r.name, s: r.institution, u: url(`researchers/${r.id}/`) })),
   ...topics.map((t) => ({ k: 'Topic', t: t.name, s: t.description, u: url(`topics/${t.id}/`) })),
-  ...papers.map((p) => ({ k: 'Paper', t: p.title, s: `${p.year} · ${p.authors.slice(0, 3).join(', ')}${p.authors.length > 3 ? ' et al.' : ''}`, u: p.links.paper })),
+  ...papers.map((p) => ({ k: 'Paper', t: p.title, s: `${p.year} · ${p.authors.slice(0, 3).join(', ')}${p.authors.length > 3 ? ' et al.' : ''}`, u: url(`papers/${p.id}/`) })),
   ...projects.map((p) => ({ k: 'Project', t: p.name, s: p.description, u: p.repository })),
 ];
 ---

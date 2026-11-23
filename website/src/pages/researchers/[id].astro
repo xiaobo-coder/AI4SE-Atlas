@@ -13,8 +13,9 @@ const jsonld = { '@context': 'https://schema.org', '@type': 'Person', name: r.na
 <Base title={r.name} description={`${r.name}, ${r.institution}. AI4SE topics: ${r.topics.join(', ')}.`} jsonld={jsonld}>
   <nav class="mb-6 text-sm"><a class="text-indigo-600 hover:underline dark:text-indigo-400" href={url('researchers/')}>← All researchers</a></nav>
   <article class="fade-in max-w-3xl">
-    <h1 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">{r.name}</h1>
-    <p class="mt-1 text-lg text-slate-600 dark:text-slate-400">{r.institution} · {CATEGORY_LABEL[r.category]}</p>
+    <p class="eyebrow">Researcher / {CATEGORY_LABEL[r.category]}</p>
+    <h1 class="display mt-4">{r.name}</h1>
+    <p class="mt-5 text-xl text-slate-600 sm:text-2xl dark:text-slate-400">{r.institution}</p>
     <div class="mt-4 flex flex-wrap gap-1.5">{r.topics.map((t) => <TopicChip id={t} />)}</div>
     {links.length > 0 && <div class="mt-6 flex flex-wrap gap-2">{links.map(([k, v]) => <a href={v} rel="noopener" class="rounded-lg border border-slate-300 px-3 py-1.5 text-sm hover:border-indigo-400 dark:border-slate-700">{LINK_LABEL[k] ?? k} ↗</a>)}</div>}
     {theirPapers.length > 0 && (

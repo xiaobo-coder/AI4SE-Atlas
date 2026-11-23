@@ -1,0 +1,41 @@
+---
+// Topic × year heatmap of paper records in the atlas. Sequential single-hue ramp (blue), counts printed in cells.
+import { topicYearCounts } from '../utils/viz';
+const { years, rows, max } = topicYearCounts();
+const RAMP = ['#cde2fb', '#9ec5f4', '#6da7ec', '#3987e5', '#256abf', '#184f95', '#0d366b']; // light: low → high
+const RAMP_DARK = ['#104281', '#184f95', '#1c5cab', '#256abf', '#2a78d6', '#5598e7', '#86b6ef']; // dark: low → high
+const step = (n: number) => Math.min(RAMP.length - 1, Math.floor((n / max) * (RAMP.length - 1) + 0.0001));
+const cw = 64, ch = 30, left = 160, top = 28, W = left + cw * years.length + 8, H = top + ch * rows.length + 8;
+---
+<div class="viz-root relative" data-heat>
+  <svg viewBox={`0 0 ${W} ${H}`} class="h-auto w-full" role="img" aria-labelledby="heat-t heat-d">
+    <title id="heat-t">Papers in the atlas per topic and year</title>
+    <desc id="heat-d">Darker cells mean more papers in this atlas for that topic and year. Counts are printed in each cell. This reflects the atlas selection, not the size of a research area.</desc>
+    <g class="viz-axis" font-size="12">
+      {years.map((y, j) => <text x={left + cw * j + cw / 2} y={top - 10} text-anchor="middle">{y}</text>)}
+      {rows.map((r, i) => <text x={left - 12} y={top + ch * i + ch / 2 + 4} text-anchor="end" class="viz-lane-label">{r.label}</text>)}
+    </g>
+    {rows.map((r, i) => r.cells.map((n, j) => {
+      const s = step(n);
+      return (
+        <g>
+          <title>{`${r.label}, ${years[j]}: ${n} paper${n === 1 ? '' : 's'}`}</title>
+          <rect class="heat-cell" x={left + cw * j} y={top + ch * i} width={cw} height={ch} rx="4"
+            style={n === 0 ? 'fill: var(--heat-zero)' : `--l:${RAMP[s]};--d:${RAMP_DARK[s]};fill: var(--heat-fill)`} data-n={n} />
+          {n > 0 && <text x={left + cw * j + cw / 2} y={top + ch * i + ch / 2 + 4} text-anchor="middle" font-size="12" font-family="var(--font-mono)"
+            class={`heat-t s${s}`}>{n}</text>}
+        </g>
+      );
+    }))}
+  </svg>
+</div>
+<style is:global>
+  .viz-root { --heat-zero: #f1f1ee; }
+  .dark .viz-root { --heat-zero: #16181e; }
+  .heat-cell { fill: var(--heat-fill); --heat-fill: var(--l); }
+  .dark .heat-cell { --heat-fill: var(--d); }
+  .heat-t { fill: #ffffff; }
+  .heat-t.s0, .heat-t.s1, .heat-t.s2 { fill: #0b0b0b; }
+  .dark .heat-t.s0, .dark .heat-t.s1, .dark .heat-t.s2 { fill: #ffffff; }
+  .dark .heat-t.s5, .dark .heat-t.s6 { fill: #0b0b0b; }
+</style>

@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { papers, topics, topicById, authorLine, url } from '../../utils/data';
+import { monthLabel } from '../../utils/viz';
+const years = [...new Set(papers.map((p) => p.year))].sort((a, b) => b - a);
+const sel = 'w-full sm:w-auto rounded-xl border-0 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none ring-1 ring-black/5 focus:ring-2 focus:ring-teal-500/50 dark:bg-white/[.06] dark:text-slate-200 dark:ring-white/10';
+---
+<Base title="Papers" description="Selected AI4SE papers, listed chronologically.">
+  <PageHeader eyebrow={`Library / ${papers.length} papers / newest first`} title="Selected" accent="papers." lead="Listed by date, newest first. A selection is not a ranking: these are papers that introduced a widely used benchmark, model, method or tool. Metadata comes from the arXiv record.">
+    <p class="mt-3 text-sm"><a class="text-indigo-600 hover:underline dark:text-indigo-400" href={url('data/papers.bib')}>Download all as BibTeX</a></p>
+  </PageHeader>
+  <div class="md:sticky top-14 z-20 -mx-4 mb-6 flex flex-wrap gap-2 border-b border-slate-200 bg-[#f5f5f7]/90 px-4 py-3 backdrop-blur dark:border-white/10 dark:bg-white/[.02]/90">
+    <label class="sr-only" for="p-q">Search title or author</label>
+    <input id="p-q" type="search" placeholder="Search title or author…" class={sel + ' min-w-52 flex-1'} />
+    <label class="sr-only" for="p-year">Year</label>
+    <select id="p-year" class={sel}><option value="">All years</option>{years.map((y) => <option value={y}>{y}</option>)}</select>
+    <label class="sr-only" for="p-topic">Topic</label>
+    <select id="p-topic" class={sel}><option value="">All topics</option>{topics.map((t) => <option value={t.id}>{t.name}</option>)}</select>
+    <label class="sr-only" for="p-order">Order</label>
+    <select id="p-order" class={sel}><option value="desc">Newest first</option><option value="asc">Oldest first</option></select>
+  </div>
+  <p id="p-count" class="mb-4 text-sm text-slate-600 dark:text-slate-400" aria-live="polite"></p>
+  <ol id="p-list" class="relative space-y-5 before:absolute before:bottom-4 before:left-[2.6rem] before:top-4 before:hidden before:w-px before:bg-black/10 sm:before:block dark:before:bg-white/10">
+    {papers.map((p, i) => (
+      <li data-item data-i={i} data-year={p.year} data-topics={p.topics.join(' ')} data-text={(p.title + ' ' + p.authors.join(' ')).toLowerCase()} class="result-enter relative sm:pl-24">
+        <div class="absolute left-0 top-6 hidden w-[5.2rem] flex-col items-center sm:flex">
+          <span class="rounded-xl bg-white px-2.5 py-1.5 text-center ring-1 ring-black/10 dark:bg-[#11131a] dark:ring-white/15">
+            <span class="block font-mono text-[11px] uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">{monthLabel(p).split(' ')[0]}</span>
+            <span class="block font-mono text-base font-semibold tabular-nums text-slate-900 dark:text-white">{p.year}</span>
+          </span>
+        </div>
+        <article class="group rounded-2xl bg-white ring-1 ring-black/[.06] shadow-[0_1px_2px_rgba(0,0,0,.04),0_8px_24px_-12px_rgba(0,0,0,.12)] dark:bg-white/[.04] dark:ring-white/10 dark:shadow-none transition hover:-translate-y-0.5 hover:shadow-[0_2px_4px_rgba(0,0,0,.05),0_16px_32px_-12px_rgba(0,0,0,.18)] hover:ring-black/10 dark:hover:bg-white/[.06] dark:hover:ring-white/20 p-6 sm:p-7">
+          <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400 sm:hidden">{monthLabel(p)}</p>
+          <a href={url(`papers/${p.id}/`)} class="mt-1 block text-xl font-semibold leading-snug tracking-[0.002em] text-slate-900 hover:text-teal-700 sm:mt-0 sm:text-[22px] dark:text-white dark:hover:text-teal-300">{p.title}</a>
+          <p class="mt-3 text-[15px] leading-7 tracking-[0.01em] text-slate-600 dark:text-slate-400">{authorLine(p.authors)}</p>
+          <div class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/[.06] pt-4 dark:border-white/10">
+            <div class="flex flex-wrap items-center gap-2"><span class="text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">Topics</span>{p.topics.map((t) => <a href={url(`topics/${t}/`)} class="rounded-full bg-black/5 px-2.5 py-1 text-xs text-slate-700 dark:bg-white/10 dark:text-slate-300 hover:bg-black/10 dark:hover:bg-white/15">{topicById.get(t)?.short_name ?? t}</a>)}</div>
+            {p.arxiv && <div class="flex items-center gap-2"><span class="text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">arXiv</span><span class="font-mono text-xs text-slate-700 dark:text-slate-300">{p.arxiv}</span></div>}
+            <div class="flex items-center gap-2"><span class="text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">Code</span>{p.links.code
+              ? <span class="inline-flex items-center gap-1.5 text-xs text-emerald-700 dark:text-emerald-300"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Available</span>
+              : <span class="text-xs text-slate-500 dark:text-slate-400">Not listed</span>}</div>
+            <span class="ml-auto flex gap-2">
+              <a href={p.links.paper} class="rounded-full px-3 py-1.5 text-sm font-medium text-teal-700 ring-1 ring-teal-600/30 hover:bg-teal-50 dark:text-teal-300 dark:ring-teal-300/30 dark:hover:bg-teal-400/10">Paper ↗</a>
+              {p.links.code && <a href={p.links.code} class="rounded-full px-3 py-1.5 text-sm font-medium text-slate-700 ring-1 ring-black/10 hover:bg-black/5 dark:text-slate-200 dark:ring-white/15 dark:hover:bg-white/10">Code ↗</a>}
+            </span>
+          </div>
+        </article>
+      </li>
+    ))}
+  </ol>
+  <p id="p-empty" class="hidden rounded-xl border border-dashed border-slate-300 p-8 text-center text-slate-500 dark:border-slate-700">No paper matches these filters.</p>
+  <script>
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const q = $('p-q'), year = $('p-year'), topic = $('p-topic'), order = $('p-order');
+    const list = document.getElementById('p-list')!;
+    const items = [...list.querySelectorAll<HTMLElement>('[data-item]')];
+    function apply() {
+      const words = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+      let shown = 0;
+      for (const el of items) {
+        const ok = words.every((w) => el.dataset.text!.includes(w)) && (!year.value || el.dataset.year === year.value) && (!topic.value || el.dataset.topics!.split(' ').includes(topic.value));
+        el.hidden = !ok; if (ok) shown++;
+      }
+      const sorted = [...items].sort((a, b) => (order.value === 'asc' ? -1 : 1) * (Number(a.dataset.i) - Number(b.dataset.i)));
+      sorted.forEach((el) => list.appendChild(el));
+      document.getElementById('p-count')!.textContent = `${shown} of ${items.length} papers`;
+      document.getElementById('p-empty')!.classList.toggle('hidden', shown > 0);
+    }
+    q.addEventListener('input', apply); [year, topic, order].forEach((el) => el.addEventListener('change', apply));
+    apply();
+  </script>
+</Base>

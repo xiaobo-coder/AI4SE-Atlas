@@ -1,0 +1,60 @@
+---
+// Strip plot: one dot per (paper, topic). x = arXiv month, y = topic lane. One hue (single series);
+// lanes carry identity by position and label, so no categorical palette is needed.
+import { papers, topicName, url } from '../utils/data';
+import { timeline, monthLabel } from '../utils/viz';
+interface Props { compact?: boolean; id?: string }
+const { compact = false, id = 'tl' } = Astro.props;
+const g = timeline(compact ? { laneH: 30, left: 150 } : {});
+const sx = (t: number) => g.left + ((t - g.x0) / (g.x1 - g.x0)) * (g.W - g.left - g.right);
+const meta = Object.fromEntries(papers.map((p) => [p.id, {
+  t: p.title, m: monthLabel(p), a: p.authors.slice(0, 3).join(', ') + (p.authors.length > 3 ? ' et al.' : ''),
+  k: p.topics.map(topicName).join(' · '), u: url(`papers/${p.id}/`), c: p.links.code ? 1 : 0, y: p.year,
+}]));
+---
+<div class="viz-root relative" data-timeline={id}>
+  <svg viewBox={`0 0 ${g.W} ${g.H}`} class="h-auto w-full" role="img" aria-labelledby={`${id}-t ${id}-d`}>
+    <title id={`${id}-t`}>Papers over time by topic</title>
+    <desc id={`${id}-d`}>Each dot is a paper placed by its arXiv month and drawn once in every topic it belongs to. A table version is available below the chart.</desc>
+    <g class="viz-grid">
+      {g.years.map((y) => <line x1={sx(y)} x2={sx(y)} y1={g.top} y2={g.H - g.bottom} />)}
+      {g.lanes.map((l) => <line x1={g.left} x2={g.W - g.right} y1={l.y} y2={l.y} class="viz-lane" />)}
+    </g>
+    <g class="viz-axis" font-size={compact ? 12 : 13}>
+      {g.years.slice(0, -1).map((y) => <text x={sx(y + 0.5)} y={g.H - 10} text-anchor="middle">{y}</text>)}
+      {g.lanes.map((l) => <text x={g.left - 14} y={l.y + 4} text-anchor="end" class="viz-lane-label">{l.label}</text>)}
+    </g>
+    <g class="viz-dots">
+      {g.dots.map((d) => <a href={meta[d.pid].u} aria-label={`${meta[d.pid].t} (${meta[d.pid].m})`}>
+        <circle cx={d.cx} cy={d.cy} r="4.5" data-pid={d.pid} data-year={meta[d.pid].y} data-code={meta[d.pid].c} />
+      </a>)}
+    </g>
+  </svg>
+  <div class="viz-tip pointer-events-none absolute z-20 hidden max-w-xs rounded-lg border px-3 py-2 text-xs shadow-xl" role="status" aria-live="polite"></div>
+  <script type="application/json" data-meta set:html={JSON.stringify(meta).replace(/</g, '\\u003c')} />
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-timeline]').forEach((root) => {
+    const meta = JSON.parse(root.querySelector('[data-meta]')!.textContent || '{}');
+    const tip = root.querySelector<HTMLElement>('.viz-tip')!;
+    const dots = [...root.querySelectorAll<SVGCircleElement>('circle[data-pid]')];
+    const esc = (s: string) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+    function show(c: SVGCircleElement) {
+      const pid = c.dataset.pid!, m = meta[pid];
+      dots.forEach((d) => d.classList.toggle('is-hot', d.dataset.pid === pid));
+      root.classList.add('has-hot');
+      tip.innerHTML = `<div class="font-semibold leading-snug">${esc(m.t)}</div><div class="mt-1 opacity-80">${esc(m.m)} · ${esc(m.a)}</div><div class="mt-1 opacity-70">${esc(m.k)}</div>`;
+      tip.classList.remove('hidden');
+      const r = root.getBoundingClientRect(), b = c.getBoundingClientRect();
+      let x = b.left - r.left + 14, y = b.top - r.top - 10;
+      if (x + 300 > r.width) x = b.left - r.left - 314;
+      tip.style.left = Math.max(0, x) + 'px'; tip.style.top = Math.max(0, y) + 'px';
+    }
+    function hide() { dots.forEach((d) => d.classList.remove('is-hot')); root.classList.remove('has-hot'); tip.classList.add('hidden'); }
+    dots.forEach((c) => {
+      const a = c.parentElement as unknown as SVGAElement;
+      c.addEventListener('mouseenter', () => show(c)); c.addEventListener('mouseleave', hide);
+      a.addEventListener('focus', () => show(c)); a.addEventListener('blur', hide);
+    });
+  });
+</script>

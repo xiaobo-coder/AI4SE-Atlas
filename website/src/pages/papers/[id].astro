@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import TopicChip from '../../components/TopicChip.astro';
+import { papers, projects, researchers, url, type Paper } from '../../utils/data';
+import { monthLabel } from '../../utils/viz';
+export function getStaticPaths() { return papers.map((p) => ({ params: { id: p.id }, props: { p } })); }
+const { p } = Astro.props as { p: Paper };
+const tools = projects.filter((j) => j.related_papers?.includes(p.id));
+const people = researchers.filter((r) => [r.name, ...(r.aliases ?? [])].some((n) => p.authors.some((a) => a.toLowerCase() === n.toLowerCase())));
+const jsonld = {
+  '@context': 'https://schema.org', '@type': 'ScholarlyArticle', headline: p.title, name: p.title,
+  author: p.authors.map((a) => ({ '@type': 'Person', name: a })), datePublished: String(p.year),
+  url: p.links.paper, sameAs: [p.links.paper, p.links.code].filter(Boolean), about: p.topics,
+  ...(p.arxiv ? { identifier: { '@type': 'PropertyValue', propertyID: 'arXiv', value: p.arxiv } } : {}),
+};
+const bib = `@misc{${p.id},\n  title = {{${p.title}}},\n  author = {${p.authors.join(' and ')}},\n  year = {${p.year}},${p.arxiv ? `\n  eprint = {${p.arxiv}},\n  archivePrefix = {arXiv},` : ''}\n  url = {${p.links.paper}}\n}`;
+---
+<Base title={p.title} description={`${p.title} (${p.year}). ${p.authors.slice(0, 4).join(', ')}${p.authors.length > 4 ? ' et al.' : ''}.`} jsonld={jsonld}>
+  <Fragment slot="head">
+    <meta name="citation_title" content={p.title} />
+    {p.authors.map((a) => <meta name="citation_author" content={a} />)}
+    <meta name="citation_publication_date" content={String(p.year)} />
+    {p.arxiv && <meta name="citation_arxiv_id" content={p.arxiv} />}
+    {p.arxiv && <meta name="citation_pdf_url" content={`https://arxiv.org/pdf/${p.arxiv}`} />}
+  </Fragment>
+  <nav class="mb-6 text-sm"><a class="text-accent hover:underline" href={url('papers/')}>← All papers</a></nav>
+  <article class="max-w-3xl">
+    <p class="eyebrow fade-in">Paper / {monthLabel(p)}{p.arxiv && ` / arXiv:${p.arxiv}`}</p>
+    <h1 class="fade-in mt-3 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl dark:text-white">{p.title}</h1>
+    <p class="fade-in-2 mt-4 text-slate-600 dark:text-slate-400">{p.authors.join(', ')}</p>
+    <div class="mt-5 flex flex-wrap gap-1.5">{p.topics.map((t) => <TopicChip id={t} />)}</div>
+    <div class="mt-6 flex flex-wrap gap-2">
+      <a class="btn-accent" href={p.links.paper}>Read the paper ↗</a>
+      {p.links.code && <a class="btn-ghost" href={p.links.code}>Code ↗</a>}
+    </div>
+    {people.length > 0 && <section class="mt-10"><h2 class="eyebrow">Authors in the atlas</h2><ul class="mt-2 flex flex-wrap gap-2">{people.map((r) => <li><a class="btn-ghost" href={url(`researchers/${r.id}/`)}>{r.name}</a></li>)}</ul></section>}
+    {tools.length > 0 && <section class="mt-8"><h2 class="eyebrow">Open-source projects</h2><ul class="mt-2 space-y-1">{tools.map((j) => <li><a class="hover:underline" href={j.repository}>{j.name}</a> <span class="text-sm text-slate-600 dark:text-slate-400">— {j.description}</span></li>)}</ul></section>}
+    <section class="mt-10"><h2 class="eyebrow">Cite</h2><pre class="mt-2 overflow-x-auto rounded-xl bg-slate-900 p-4 font-mono text-xs text-slate-100">{bib}</pre></section>
+    <p class="mt-8 text-xs text-slate-600 dark:text-slate-400">Metadata from <a class="underline" href={p.sources[0]}>{p.sources[0]}</a>{p.last_verified && `, checked ${p.last_verified}`}. <a class="underline" href={url('about/#corrections')}>Report a correction</a>.</p>
+  </article>
+</Base>

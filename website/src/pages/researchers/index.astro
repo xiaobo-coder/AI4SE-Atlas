@@ -1,24 +1,23 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
-import TopicChip from '../../components/TopicChip.astro';
-import { researchers, topics, initial, CATEGORY_LABEL, url } from '../../utils/data';
+import { researchers, topics, topicById, initial, CATEGORY_LABEL, url } from '../../utils/data';
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
 const groups = new Map<string, typeof researchers>();
 for (const r of researchers) { const l = initial(r); if (!groups.has(l)) groups.set(l, []); groups.get(l)!.push(r); }
 const institutions = [...new Set(researchers.map((r) => r.institution))].sort((a, b) => a.localeCompare(b));
-const sel = 'rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900';
+const sel = 'w-full sm:w-auto rounded-xl border-0 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none ring-1 ring-black/5 focus:ring-2 focus:ring-teal-500/50 dark:bg-white/[.06] dark:text-slate-200 dark:ring-white/10';
 ---
 <Base title="Researchers" description="AI4SE researchers in academia and industry, listed A–Z by family name.">
-  <PageHeader eyebrow="Directory" title="Researchers" lead="Listed alphabetically by family name. Inclusion is not a ranking or an endorsement, and every entry cites a public source." />
+  <PageHeader eyebrow={`Directory / ${researchers.length} researchers / A–Z by family name`} title="The people" accent="behind AI4SE." lead="Listed alphabetically by family name. Inclusion is not a ranking or an endorsement, and every entry cites a public source." />
   {researchers.length === 0 ? (
     <div class="rounded-2xl border border-dashed border-slate-300 p-10 text-center text-slate-500 dark:border-slate-700">
       No researchers have been added yet. <a class="text-indigo-600 underline dark:text-indigo-400" href={url('contribute/')}>Suggest one</a>.
     </div>
   ) : (
   <div>
-    <div class="md:sticky top-14 z-20 -mx-4 mb-6 border-b border-slate-200 bg-white/90 px-4 py-3 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+    <div class="md:sticky top-14 z-20 -mx-4 mb-6 border-b border-slate-200 bg-[#f5f5f7]/90 px-4 py-3 backdrop-blur dark:border-white/10 dark:bg-[#0b0d12]/90">
       <div class="flex flex-wrap gap-2">
         <label class="sr-only" for="r-q">Search by name</label>
         <input id="r-q" type="search" placeholder="Search by name…" class={sel + ' min-w-52 flex-1'} />
@@ -29,7 +28,7 @@ const sel = 'rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm dark:
         <label class="sr-only" for="r-inst">Institution</label>
         <select id="r-inst" class={sel + ' max-w-60'}><option value="">All institutions</option>{institutions.map((i) => <option value={i}>{i}</option>)}</select>
       </div>
-      <nav aria-label="Alphabet" class="mt-3 flex flex-wrap gap-1 text-xs font-semibold">
+      <nav aria-label="Alphabet" class="mt-3 flex flex-wrap gap-0.5 text-[13px] font-medium">
         {letters.map((l) => groups.has(l)
           ? <a href={`#letter-${l === '#' ? 'other' : l}`} data-letter={l} class="az-link rounded px-2 py-1 text-slate-700 hover:bg-indigo-100 dark:text-slate-300 dark:hover:bg-indigo-950">{l}</a>
           : <span class="rounded px-2 py-1 text-slate-300 dark:text-slate-700" aria-hidden="true">{l}</span>)}
@@ -37,15 +36,22 @@ const sel = 'rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm dark:
     </div>
     <p id="r-count" class="mb-4 text-sm text-slate-600 dark:text-slate-400" aria-live="polite"></p>
     {[...groups.entries()].map(([l, list]) => (
-      <section id={`letter-${l === '#' ? 'other' : l}`} data-group class="mb-8 scroll-mt-20 md:scroll-mt-56">
-        <h2 class="mb-3 text-lg font-semibold text-slate-500 dark:text-slate-500 dark:text-slate-400">{l}</h2>
+      <section id={`letter-${l === '#' ? 'other' : l}`} data-group class="mb-12 scroll-mt-20 md:scroll-mt-56">
+        <h2 class="mb-4 flex items-baseline gap-3 border-b border-slate-200 pb-2 dark:border-white/10">
+          <span class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{l}</span>
+          <span class="text-sm text-slate-500 dark:text-slate-400">{list.length}</span>
+        </h2>
         <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((r) => (
             <a href={url(`researchers/${r.id}/`)} data-item data-name={r.name.toLowerCase()} data-cat={r.category} data-topics={r.topics.join(' ')} data-inst={r.institution}
-              class="card result-enter block rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
-              <div class="font-semibold text-slate-900 dark:text-white">{r.name}</div>
-              <div class="text-sm text-slate-500 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400">{r.institution} · {CATEGORY_LABEL[r.category]}</div>
-              <div class="mt-2 flex flex-wrap gap-1">{r.topics.map((t) => <TopicChip id={t} link={false} />)}</div>
+              class="card result-enter group relative block rounded-2xl bg-white p-5 ring-1 ring-black/[.06] transition hover:-translate-y-0.5 hover:shadow-lg dark:bg-white/[.04] dark:ring-white/10 dark:hover:bg-white/[.07]">
+              <div class="text-xl font-semibold tracking-tight text-slate-900 dark:text-white">{r.name}</div>
+              <div class="mt-1 text-[15px] text-slate-600 dark:text-slate-400">{r.institution}</div>
+              <div class="mt-4 flex flex-wrap gap-1.5 text-xs text-slate-600 dark:text-slate-400">
+                <span class="rounded-full bg-black/5 px-2.5 py-1 dark:bg-white/10">{CATEGORY_LABEL[r.category]}</span>
+                {r.topics.map((t) => <span class="rounded-full bg-black/5 px-2.5 py-1 dark:bg-white/10">{topicById.get(t)?.short_name ?? t}</span>)}
+              </div>
+              <span aria-hidden="true" class="absolute right-5 top-5 text-lg text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-teal-600 dark:group-hover:text-teal-300">›</span>
             </a>
           ))}
         </div>
