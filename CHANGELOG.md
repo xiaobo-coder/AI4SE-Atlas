@@ -7,9 +7,11 @@ All notable changes to the data model, taxonomy, data and website. The project f
 ### Added
 - Explore page: interactive timeline of papers by topic (search, year range, code filter, table view, CSV/JSON/BibTeX downloads) and a topic-by-year coverage heatmap.
 - A page per paper with Google Scholar `citation_*` meta tags, schema.org `ScholarlyArticle`, BibTeX and links to authors and projects in the atlas.
-- `data/papers.csv`, `sitemap.xml`, `llms.txt`.
+- `data/papers.csv`, `sitemap.xml`, `llms.txt`, `llms-full.txt`.
+- `AGENTS.md` (instructions for AI agents; `CLAUDE.md` points to it) and a "For AI agents" section in the README.
 
 ### Changed
+- Contribute steps and topic chips use the same monochrome style as the rest of the site.
 - Editorial redesign: dark theme by default, large display type, monospace labels, timeline on the home page.
 
 ## [0.1.0] - 2026-11-22

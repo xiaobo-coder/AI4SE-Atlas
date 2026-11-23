@@ -11,10 +11,10 @@ const pj = projects.filter((p) => p.topics.includes(t.id));
 const jsonld = { '@context': 'https://schema.org', '@type': 'DefinedTerm', name: t.name, description: t.description, termCode: t.id, inDefinedTermSet: 'AI4SE Atlas taxonomy' };
 ---
 <Base title={t.name} description={t.description} jsonld={jsonld}>
-  <nav class="mb-6 text-sm"><a class="text-indigo-600 hover:underline dark:text-indigo-400" href={url('topics/')}>← All topics</a></nav>
+  <nav class="mb-6 text-sm"><a class="text-teal-700 hover:underline dark:text-teal-300" href={url('topics/')}>← All topics</a></nav>
   <div class="grid items-start gap-8 lg:grid-cols-[1fr_1fr]">
     <div class="fade-in">
-      <p class="text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Topic · <code>{t.id}</code></p>
+      <p class="eyebrow">Topic · <code>{t.id}</code></p>
       <h1 class="display mt-4 !text-5xl sm:!text-6xl">{t.name}</h1>
       <p class="mt-5 text-lg text-slate-600 dark:text-slate-400">{t.description}</p>
       {t.related_topics && t.related_topics.length > 0 && <div class="mt-4 flex flex-wrap items-center gap-1.5 text-sm"><span class="text-slate-500">Related:</span>{t.related_topics.map((r) => <TopicChip id={r} />)}</div>}

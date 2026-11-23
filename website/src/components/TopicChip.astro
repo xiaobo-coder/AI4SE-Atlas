@@ -2,6 +2,6 @@
 import { topicName, url } from '../utils/data';
 interface Props { id: string; link?: boolean }
 const { id, link = true } = Astro.props;
-const cls = 'inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700 dark:border-indigo-900 dark:bg-indigo-950/60 dark:text-indigo-300';
+const cls = 'inline-flex items-center rounded-full bg-black/5 px-2.5 py-1 text-xs text-slate-700 dark:bg-white/10 dark:text-slate-300';
 ---
-{link ? <a href={url(`topics/${id}/`)} class={cls + ' hover:border-indigo-400'}>{topicName(id)}</a> : <span class={cls}>{topicName(id)}</span>}
+{link ? <a href={url(`topics/${id}/`)} class={cls + ' hover:bg-black/10 dark:hover:bg-white/15'}>{topicName(id)}</a> : <span class={cls}>{topicName(id)}</span>}

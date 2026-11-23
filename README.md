@@ -42,7 +42,19 @@ papers = yaml.safe_load(open("data/papers.yaml"))
 agents = [p["title"] for p in papers if "ai-agents" in p["topics"]]
 ```
 
-Endpoints: `data/atlas.json`, `data/researchers.json`, `data/topics.json`, `data/papers.json`, `data/projects.json`, `data/papers.csv`, `data/papers.bib`, `sitemap.xml`, `llms.txt`.
+Endpoints: `llms.txt`, `llms-full.txt`, `data/atlas.json`, `data/researchers.json`, `data/topics.json`, `data/papers.json`, `data/projects.json`, `data/papers.csv`, `data/papers.bib`, `sitemap.xml`, `llms.txt`.
+
+## For AI agents (Claude, Codex, ChatGPT, Copilot, crawlers)
+
+Use the machine-readable files instead of scraping pages:
+
+- **[`llms.txt`](https://xiaobo-coder.github.io/AI4SE-Atlas/llms.txt)** – short guide: what the atlas is, where the data is, how to cite it.
+- **[`llms-full.txt`](https://xiaobo-coder.github.io/AI4SE-Atlas/llms-full.txt)** – every record as plain text, ready for a context window.
+- **[`data/atlas.json`](https://xiaobo-coder.github.io/AI4SE-Atlas/data/atlas.json)** – everything as JSON (plus per-type JSON, CSV and BibTeX).
+- **[`sitemap.xml`](https://xiaobo-coder.github.io/AI4SE-Atlas/sitemap.xml)** – all pages; each paper page carries Google Scholar `citation_*` tags and schema.org JSON-LD.
+- **[`AGENTS.md`](AGENTS.md)** – rules for agents that edit this repository (also read by Codex; `CLAUDE.md` points to it for Claude Code).
+
+Please do not present the atlas as a ranking, and cite each record's original source for facts.
 
 ## Research topics (v1)
 
@@ -82,6 +94,7 @@ Use GitHub's **Cite this repository** button (from [`CITATION.cff`](CITATION.cff
 data/        YAML records: researchers, topics, papers, projects
 schemas/     JSON Schemas for each record type
 scripts/     validate.py (schemas, references, duplicates), add_arxiv.py, make_map_svg.py, tests
+AGENTS.md    instructions for AI agents (CLAUDE.md points here)
 website/     Astro + Tailwind static site (reads data/ at build time)
 assets/      animated topic map (SVG for the README, GIF for slides/posts), social preview image
 .github/     issue and PR templates, validate and deploy workflows
